@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>PHP For Windows: Binaries and sources Releases</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <link type="text/css" media="screen" rel="stylesheet" href="/styles/screen.css" />
+        <link type="text/css" media="print" rel="stylesheet" href="/styles/print.css" />
+        <link type="text/css" media="handfield" rel="stylesheet" href="/styles/handfield.css" />
+
+        <link rel="icon" href="https://windows.php.net/favicon.ico" type="image/x-icon" />
+    </head>
+
+    <body id="homepage">
+        <ul id="root">
+            <li id="header">
+                <div class="content">
+                    <h1><a href="https://windows.php.net/index.php">PHP: Hypertext Preprocessor</a></h1>
+                </div><!-- .content -->
+            </li><!-- .header-->
+
+            <li id="main-menu">
+                <ul id="top-navigation">
+                    <li><a href="https://windows.php.net/">Home</a></li>
+                    <li><a href="https://windows.php.net/download/">Downloads</a></li>
+                    <li><a href="https://windows.php.net/qa/">QA Releases</a></li>
+                    <li><a href="https://windows.php.net/snapshots/">Snapshots</a></li>
+                    <li><a href="https://windows.php.net/team.php">Team</a></li>
+                    <li class="last"><a href="http://www.php.net">PHP.net site</a></li>
+                </ul>
+            </li><!-- .main-menu-->
+            <li id="news-line"><!-- #news-line -->
+            </li><!-- #news-line -->            <li id="content">
+                <ul id="content-columns">
+                    <li id="left-column">
+                        <div class="content">
+
+                            <div class="block"><!-- .block -->
+                                <span class="corners-top"><span></span></span>
+
+                                <div class="info"><!-- .info -->
+
+                                    <h3>PHP For Windows</h3>
+                                    <p>
+                                    This site is dedicated to supporting PHP on Microsoft Windows.
+                                    It also supports ports of PHP extensions or features as well as
+                                    providing special builds for the various Windows architectures.</p>
+                                    <p>
+                                    If you like to build your own PHP binaries, instructions can be found on the
+                                    <a href="https://wiki.php.net/internals/windows/stepbystepbuild">Wiki</a>.
+                                    </p>
+
+                                </div><!-- .info -->
+
+                                <span class="corners-bottom"><span></span></span>
+                            </div><!-- .block -->
+
+                            <div class="block"><!-- .block -->
+                                <span class="corners-top"><span></span></span>
+
+                                <div class="info"><!-- .info -->
+
+                                    <h3>PECL For Windows</h3>
+                                    <p>
+                                    <a href="http://pecl.php.net">PECL extensions</a> for Windows is being worked on.
+                                    Windows DLL can be downloaded right from the <a href="http://pecl.php.net">PECL website</a>.
+                                    </p>
+
+                                </div><!-- .info -->
+
+                                <span class="corners-bottom"><span></span></span>
+                            </div><!-- .block -->
+
+                            <div class="block"><!-- .block -->
+                                <span class="corners-top"><span></span></span>
+
+                                <div class="info"><!-- .info -->
+
+                                    <h3>Which version do I choose?</h3> <br/>
+
+									<h4><u>IIS</u></h4>
+									<p>If you are using PHP as FastCGI with IIS you should use the Non-Thread Safe (NTS) versions of PHP.</p>
+
+									<h4><u>Apache</u></h4>
+									<p>Please use the Apache HTTP Server builds provided by <a href="https://www.apachelounge.com/download/">Apache Lounge</a>.
+									They provide VC16 and VS17 builds of Apache for x86 and x64.
+									We use their binaries to build the Apache SAPIs.</p>
+
+									<p>With Apache, using the apache2handler SAPI, you have to use the Thread Safe (TS) versions of PHP.</p>
+
+									<h4><u>VS16 &amp; VS17</u></h4>
+									<p>More recent versions of PHP are built with VS16 or VS17 (Visual Studio 2019 or 2022 compiler respectively) and
+									include improvements in performance and stability.</p>
+
+									<p> - The VS16 and VS17 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2015-2022</i> <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">x64</a> or <a href="https://aka.ms/vs/17/release/vc_redist.x86.exe">x86</a> installed</p>
+
+									<h4><u>TS and NTS</u></h4>
+									<p><strong>TS</strong> refers to multithread capable builds. <strong>NTS</strong> refers to single thread only builds. Use case for <strong>TS</strong> binaries involves interaction with
+									a multithreaded <strong>SAPI</strong> and PHP loaded as a module into a web server. For <strong>NTS</strong> binaries the widespread use case is interaction with a web server through
+									the FastCGI protocol, utilizing no multithreading (but also for example CLI).</p>
+
+									<h4><u>What is PGO?</u></h4>
+									<p><a href="http://msdn.microsoft.com/en-us/library/e7k32f4k%28v=vs.110%29.aspx" target="_blank">Profile Guided Optimization</a> is an optimization
+									feature available in Microsoft's Visual C++ compiler that allows you to optimize an output file based on profiling data collected during test runs of the application or module.<p>
+									<p><strong>Links:</strong></p>
+									<ul>
+										<li><a href="http://msdn.microsoft.com/en-us/library/e7k32f4k%28v=vs.110%29.aspx" target="_blank">PGO on MSDN</a></li>
+										<li><a href="https://devblogs.microsoft.com/cppblog/speed-up-windows-php-performance-using-profile-guided-optimization-pgo/" target="_blank">Visual C++ Team Blog - PGO with PHP</a></li>
+										<li><a href="http://www.ksingla.net/2010/05/php-pgo-build-for-maximum-performance-on-windows/" target="_blank">PHP PGO build for maximum performance</a> (old)</li>
+									</ul>
+
+									<a name="x64"> </a>
+									<h4><u>amd64 (x86_64) Builds</u></h4>
+									<p><strong>PHP 7 provides full 64-bit support.</strong> The x64 builds of PHP 7 support native 64-bit integers, LFS, 64-bit memory_limit and much more.</p>
+									<p>x64 builds are recommended (almost all Windows installations support x64).</p>
+
+									<a name="long_path"></a>
+									<h4><u>Long and multibyte path</u></h4>
+									<p><strong>PHP 7.1+ supports long and UTF-8 paths.</strong> See the <a href="http://php.net/manual/en/migration71.windows-support.php">manual</a> for details.</p>
+
+									<br/>
+
+                                </div><!-- .info -->
+
+                                <span class="corners-bottom"><span></span></span>
+                            </div><!-- .block -->
+
+                            <div class="block"><!-- .block -->
+                                <span class="corners-top"><span></span></span>
+
+                                <div class="info"><!-- .info -->
+
+                                    <h3>Archives</h3>
+                                    <p>
+                                    Past releases are available from our <a href="https://windows.php.net/downloads/releases/archives/">archives</a>, older versions
+                                    not found there can be found at the <a href="http://museum.php.net/">Museum</a>.
+                                    </p>
+
+                                </div><!-- .info -->
+
+                                <span class="corners-bottom"><span></span></span>
+                            </div><!-- .block -->
+
+
+
+
+                        </div> <!-- .content -->
+                    </li><!-- #left-column -->
+                    <li id="main-column">
+
+                        <div class="content">
+                            <div class="adv-block"><!-- .adv-block -->
+                                <span class="corners-top"><span></span></span>
+                                
+                                <div class="info entry"><!-- .info -->
+                                    <h2 name="top" id="top">Binaries and sources Releases</h2>
+                                    
+                                    <select onchange="window.location.hash=this.options[this.selectedIndex].value">
+                                        <option value="top" selected="true">Select an option to direct access...</option>
+	<optgroup label="php--8.5">
+	</optgroup>
+	<optgroup label="php--8.4">
+		<option value="php-8.4-nts-vs17-x64">VS17 x64 Non Thread Safe</option>
+		<option value="php-8.4-ts-vs17-x64">VS17 x64 Thread Safe</option>
+		<option value="php-8.4-nts-vs17-x86">VS17 x86 Non Thread Safe</option>
+		<option value="php-8.4-ts-vs17-x86">VS17 x86 Thread Safe</option>
+	</optgroup>
+	<optgroup label="php--8.3">
+		<option value="php-8.3-nts-vs16-x64">VS16 x64 Non Thread Safe</option>
+		<option value="php-8.3-ts-vs16-x64">VS16 x64 Thread Safe</option>
+		<option value="php-8.3-nts-vs16-x86">VS16 x86 Non Thread Safe</option>
+		<option value="php-8.3-ts-vs16-x86">VS16 x86 Thread Safe</option>
+	</optgroup>
+	<optgroup label="php--8.2">
+		<option value="php-8.2-nts-vs16-x64">VS16 x64 Non Thread Safe</option>
+		<option value="php-8.2-ts-vs16-x64">VS16 x64 Thread Safe</option>
+		<option value="php-8.2-nts-vs16-x86">VS16 x86 Non Thread Safe</option>
+		<option value="php-8.2-ts-vs16-x86">VS16 x86 Thread Safe</option>
+	</optgroup>
+	<optgroup label="php--8.1">
+		<option value="php-8.1-nts-vs16-x64">VS16 x64 Non Thread Safe</option>
+		<option value="php-8.1-ts-vs16-x64">VS16 x64 Thread Safe</option>
+		<option value="php-8.1-nts-vs16-x86">VS16 x86 Non Thread Safe</option>
+		<option value="php-8.1-ts-vs16-x86">VS16 x86 Thread Safe</option>
+	</optgroup>
+
+                                    </select>
+                                    <br><br><a href="https://windows.php.net/downloads/releases/archives/">Past releases</a>
+                                </div><!-- .info -->
+                                
+                                <span class="corners-bottom"><span></span></span>
+                            </div><!-- .adv-block -->
+
+	<div class="block">
+	<span class="corners-top"><span></span></span>
+	<div class="info entry"> 
+	<h3 id="php-8.5" name="php-8.5" class="summary entry-title">PHP 8.5</h3>
+	<p class="news-date"></p>
+8.5 has no release.<br></div><span class="corners-bottom"><span></span></span></div>
+	<div class="block">
+	<span class="corners-top"><span></span></span>
+	<div class="info entry"> 
+	<h3 id="php-8.4" name="php-8.4" class="summary entry-title">PHP 8.4 (8.4.14)</h3>
+	<p class="news-date"></p>
+	<p><a href="/downloads/releases/php-8.4.14-src.zip">Download source code</a> [29.75MB]</p>
+
+	<p><a href="/downloads/releases/php-test-pack-8.4.14.zip">Download tests package (phpt)</a> [17.41MB]</p>
+
+
+		<div class="innerbox">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.4-nts-vs17-x64" name="php-8.4-nts-vs17-x64">VS17 x64 Non Thread Safe (2025-Oct-22 08:52:16)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.4.14-nts-Win32-vs17-x64.zip">Zip</a>
+		[31.95MB]<br />
+		<span class="md5sum">sha256: 98d630843c1d9fbb01f601feafc295bae2fc83b8104b03b318d6129f52677435</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.4.14-nts-Win32-vs17-x64.zip">Debug Pack</a>
+		[36.67MB]<br />
+		<span class="md5sum">sha256: 7202334474822bbeb755461e884709e786983c955bd7c84c8b7df1629d762270</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.4.14-nts-Win32-vs17-x64.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.35MB]<br />
+		<span class="md5sum">sha256: f3039008d9f8f9be9e6b9bfd460e39f7df6fa126f33c30d581e3adc9daffad44</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.4-ts-vs17-x64" name="php-8.4-ts-vs17-x64">VS17 x64 Thread Safe (2025-Oct-22 08:55:24)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.4.14-Win32-vs17-x64.zip">Zip</a>
+		[32.1MB]<br />
+		<span class="md5sum">sha256: 9a2b383e618770846686f74303eb4bcae25f399f0127fb53da820dc821623ee3</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.4.14-Win32-vs17-x64.zip">Debug Pack</a>
+		[36.82MB]<br />
+		<span class="md5sum">sha256: 96a972d208dfca22e8675cba49902ab7b4fb4cda27883a4c7b5e1ab5222be093</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.4.14-Win32-vs17-x64.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.36MB]<br />
+		<span class="md5sum">sha256: eb9697d9849d4b28733c76ada0098907feb45d1a7847fbb4eb09e095f3f1da89</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox x86">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.4-nts-vs17-x86" name="php-8.4-nts-vs17-x86">VS17 x86 Non Thread Safe (2025-Oct-22 08:50:48)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.4.14-nts-Win32-vs17-x86.zip">Zip</a>
+		[28.67MB]<br />
+		<span class="md5sum">sha256: de0d8e0a396bbec998fdeeb03bb49f853ce91647257baaa6373c863bb1feeeb8</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.4.14-nts-Win32-vs17-x86.zip">Debug Pack</a>
+		[37.31MB]<br />
+		<span class="md5sum">sha256: c14b822ad9b9fecd70129b6e6d17ed43bce7d7df497eb94d77943dc34caea11c</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.4.14-nts-Win32-vs17-x86.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.35MB]<br />
+		<span class="md5sum">sha256: c3cd768601990d0ec3af1a47ee31a09330cb09169d3545b98844b2c09655e01c</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox x86">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.4-ts-vs17-x86" name="php-8.4-ts-vs17-x86">VS17 x86 Thread Safe (2025-Oct-22 08:53:10)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.4.14-Win32-vs17-x86.zip">Zip</a>
+		[28.69MB]<br />
+		<span class="md5sum">sha256: 5493862ca86fe69d7bfaa252eecf5c276ec4d0f21e65debc6c62d2fbee6384ca</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.4.14-Win32-vs17-x86.zip">Debug Pack</a>
+		[37.3MB]<br />
+		<span class="md5sum">sha256: 9e05f632308ca220bf1e52078f5a44233083eea0836ecb6e9c1c38ce4da8800e</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.4.14-Win32-vs17-x86.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.36MB]<br />
+		<span class="md5sum">sha256: de9e12004b9305c7cd7eb0ca91615bb8391a6c2948cd3a69662813a61b11f111</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+				</div>
+		<span class="corners-bottom"><span></span></span>
+		</div> <!-- block -->
+		<div class="block">
+	<span class="corners-top"><span></span></span>
+	<div class="info entry"> 
+	<h3 id="php-8.3" name="php-8.3" class="summary entry-title">PHP 8.3 (8.3.27)</h3>
+	<p class="news-date"></p>
+	<p><a href="/downloads/releases/php-8.3.27-src.zip">Download source code</a> [27.5MB]</p>
+
+	<p><a href="/downloads/releases/php-test-pack-8.3.27.zip">Download tests package (phpt)</a> [16.67MB]</p>
+
+
+		<div class="innerbox">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.3-nts-vs16-x64" name="php-8.3-nts-vs16-x64">VS16 x64 Non Thread Safe (2025-Oct-21 16:04:44)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.3.27-nts-Win32-vs16-x64.zip">Zip</a>
+		[30.72MB]<br />
+		<span class="md5sum">sha256: 30e52d475c89aac93a6a1931f92966e0cfd65f3badc4c83592920a917791f014</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.3.27-nts-Win32-vs16-x64.zip">Debug Pack</a>
+		[30.22MB]<br />
+		<span class="md5sum">sha256: e6220c6c4caa2e1035e9d94aefb396da44c53b97361527d1caf98f311a02b28d</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.3.27-nts-Win32-vs16-x64.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.26MB]<br />
+		<span class="md5sum">sha256: 93698465a36932f877e42a68e96494048e36bc187cfaf219c1c95317e8c7cac9</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.3-ts-vs16-x64" name="php-8.3-ts-vs16-x64">VS16 x64 Thread Safe (2025-Oct-21 16:04:28)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.3.27-Win32-vs16-x64.zip">Zip</a>
+		[30.86MB]<br />
+		<span class="md5sum">sha256: d1fc886c8f1b6732aa60361da8c935b069f98e71b5527742edf0e66caa86cca7</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.3.27-Win32-vs16-x64.zip">Debug Pack</a>
+		[30.36MB]<br />
+		<span class="md5sum">sha256: 7ce24c2f9b200b6652738eeca38e5f926944748e149fb762ef72d90b0f38e8a6</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.3.27-Win32-vs16-x64.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.26MB]<br />
+		<span class="md5sum">sha256: db08d90264e70e9614c57e58ffb486016a3da89648783197251746ab14522e58</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox x86">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.3-nts-vs16-x86" name="php-8.3-nts-vs16-x86">VS16 x86 Non Thread Safe (2025-Oct-21 16:02:26)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.3.27-nts-Win32-vs16-x86.zip">Zip</a>
+		[27.59MB]<br />
+		<span class="md5sum">sha256: bd3e899abd280588c37624272206c6e14b159c44a3724e91e9b11cad88d0db93</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.3.27-nts-Win32-vs16-x86.zip">Debug Pack</a>
+		[30.26MB]<br />
+		<span class="md5sum">sha256: e22dbd5dd42f0462e5875711cb12788260c51f1f0ee98ffa24e1b9f73c917d70</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.3.27-nts-Win32-vs16-x86.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.26MB]<br />
+		<span class="md5sum">sha256: 633cb111dfc6650bec42d414bfc4696fab1a0eb9e26f91e1a7e36fefcb78448b</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox x86">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.3-ts-vs16-x86" name="php-8.3-ts-vs16-x86">VS16 x86 Thread Safe (2025-Oct-21 16:02:56)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.3.27-Win32-vs16-x86.zip">Zip</a>
+		[27.57MB]<br />
+		<span class="md5sum">sha256: c2c65b6196ebdb278daeb30adde5107186874b6533b7cd99715a0fcfac91d7e3</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.3.27-Win32-vs16-x86.zip">Debug Pack</a>
+		[29.93MB]<br />
+		<span class="md5sum">sha256: fd39946cbab112e5622bd8887745347d93ee317c4dc995657fcf340dccb7824d</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.3.27-Win32-vs16-x86.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.26MB]<br />
+		<span class="md5sum">sha256: 19117777097e9e53d665b77b27366bc977cc2aaf048a7b9fbf45fc8883209e6b</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+				</div>
+		<span class="corners-bottom"><span></span></span>
+		</div> <!-- block -->
+		<div class="block">
+	<span class="corners-top"><span></span></span>
+	<div class="info entry"> 
+	<h3 id="php-8.2" name="php-8.2" class="summary entry-title">PHP 8.2 (8.2.29)</h3>
+	<p class="news-date"></p>
+	<p><a href="/downloads/releases/php-8.2.29-src.zip">Download source code</a> [26.52MB]</p>
+
+	<p><a href="/downloads/releases/php-test-pack-8.2.29.zip">Download tests package (phpt)</a> [15.89MB]</p>
+
+
+		<div class="innerbox">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.2-nts-vs16-x64" name="php-8.2-nts-vs16-x64">VS16 x64 Non Thread Safe (2025-Jul-01 20:37:54)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.2.29-nts-Win32-vs16-x64.zip">Zip</a>
+		[30.34MB]<br />
+		<span class="md5sum">sha256: 8404a12bd421075060ae9f7ae988777a476807163d9d4c10e1ac55175976f5c0</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.2.29-nts-Win32-vs16-x64.zip">Debug Pack</a>
+		[25.52MB]<br />
+		<span class="md5sum">sha256: cf8a0e8d0298a70becc467579c984c7088eaf2eac6ac2c2750070402a06391e1</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.2.29-nts-Win32-vs16-x64.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.24MB]<br />
+		<span class="md5sum">sha256: d91b0e40f19c32d48a3d227abf397011ce1ee3b4a3a8d5cccb68c4621547ba92</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.2-ts-vs16-x64" name="php-8.2-ts-vs16-x64">VS16 x64 Thread Safe (2025-Jul-01 20:41:32)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.2.29-Win32-vs16-x64.zip">Zip</a>
+		[30.45MB]<br />
+		<span class="md5sum">sha256: 3251789a0557eaae3cf25e7b10eccd2fb0480e1cc0ccc2666894c74de45eea76</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.2.29-Win32-vs16-x64.zip">Debug Pack</a>
+		[25.47MB]<br />
+		<span class="md5sum">sha256: 7aa990fb89d2ba014162e73d6612393b3d5748fa603bbb8eef60b3d530bb8e08</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.2.29-Win32-vs16-x64.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.24MB]<br />
+		<span class="md5sum">sha256: 1be48e56118914994e14dc826b49ae2a69a9ac24623a5e3a142855893e95708e</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox x86">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.2-nts-vs16-x86" name="php-8.2-nts-vs16-x86">VS16 x86 Non Thread Safe (2025-Jul-01 20:38:52)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.2.29-nts-Win32-vs16-x86.zip">Zip</a>
+		[27.24MB]<br />
+		<span class="md5sum">sha256: bf88cf1e7303639db234766e9eeae19d6f0760da127d4ccfd88d4a1a412a8f69</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.2.29-nts-Win32-vs16-x86.zip">Debug Pack</a>
+		[25.7MB]<br />
+		<span class="md5sum">sha256: 7c9ed619ae6e43c9e5cbe0569316ccaae6ec0ab0c158fe3f9ddd6911b9e58f8b</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.2.29-nts-Win32-vs16-x86.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.24MB]<br />
+		<span class="md5sum">sha256: cef1b2cca7e5f6194e8bedeb1d4778b9eed5eeda24aacba086cdf5f94817bbcf</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox x86">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.2-ts-vs16-x86" name="php-8.2-ts-vs16-x86">VS16 x86 Thread Safe (2025-Jul-01 20:38:26)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.2.29-Win32-vs16-x86.zip">Zip</a>
+		[27.21MB]<br />
+		<span class="md5sum">sha256: 334244d028ef1b2634a5689d3a57add301afefe70ec7391b80452f8542d7a886</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.2.29-Win32-vs16-x86.zip">Debug Pack</a>
+		[25.31MB]<br />
+		<span class="md5sum">sha256: 8d3daf6061461fd64392ac6ffe4c01d9b084659897f99c5a101a809fd787b659</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.2.29-Win32-vs16-x86.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.24MB]<br />
+		<span class="md5sum">sha256: 606c7bd7b7661fe907311725145eeafd70168128fd05e60f0c87779a10c301c4</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+				</div>
+		<span class="corners-bottom"><span></span></span>
+		</div> <!-- block -->
+		<div class="block">
+	<span class="corners-top"><span></span></span>
+	<div class="info entry"> 
+	<h3 id="php-8.1" name="php-8.1" class="summary entry-title">PHP 8.1 (8.1.33)</h3>
+	<p class="news-date"></p>
+	<p><a href="/downloads/releases/php-8.1.33-src.zip">Download source code</a> [25.74MB]</p>
+
+	<p><a href="/downloads/releases/php-test-pack-8.1.33.zip">Download tests package (phpt)</a> [15.43MB]</p>
+
+
+		<div class="innerbox">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.1-nts-vs16-x64" name="php-8.1-nts-vs16-x64">VS16 x64 Non Thread Safe (2025-Jul-02 09:09:18)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.1.33-nts-Win32-vs16-x64.zip">Zip</a>
+		[29.35MB]<br />
+		<span class="md5sum">sha256: c34703ced40248d68bef4167015d5f2cce35c43850304beb070556f9705fb746</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.1.33-nts-Win32-vs16-x64.zip">Debug Pack</a>
+		[24.97MB]<br />
+		<span class="md5sum">sha256: b07152fe913c780e54001304c355f7d13e8fcc5edbdd33cb2af6d910a043c504</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.1.33-nts-Win32-vs16-x64.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.21MB]<br />
+		<span class="md5sum">sha256: 44e245c03f1ee1251220891648b409eb0b851194cf47b363b002ab9cd2926d8e</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.1-ts-vs16-x64" name="php-8.1-ts-vs16-x64">VS16 x64 Thread Safe (2025-Jul-02 09:11:40)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.1.33-Win32-vs16-x64.zip">Zip</a>
+		[29.45MB]<br />
+		<span class="md5sum">sha256: 3888d81bf6f6a06ff2b9df5114b2ca40075d2631dc3e23584b503c40d44d8ed0</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.1.33-Win32-vs16-x64.zip">Debug Pack</a>
+		[24.96MB]<br />
+		<span class="md5sum">sha256: 7a43919fce010b46534d1ca1d8e8e8e2b6e5f5b27c75bf2953371493d528154a</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.1.33-Win32-vs16-x64.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.21MB]<br />
+		<span class="md5sum">sha256: 3b57e891f858bfd57c9184dc3ae6f5d96be94ee7d23b33aaa787da4a50268407</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox x86">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.1-nts-vs16-x86" name="php-8.1-nts-vs16-x86">VS16 x86 Non Thread Safe (2025-Jul-02 09:10:00)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.1.33-nts-Win32-vs16-x86.zip">Zip</a>
+		[26.4MB]<br />
+		<span class="md5sum">sha256: d05705d8db10b293c4e92630a327f108555e880d0ba2fbf7d1796b0e144b1ca5</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.1.33-nts-Win32-vs16-x86.zip">Debug Pack</a>
+		[24.99MB]<br />
+		<span class="md5sum">sha256: 5476d9d3afe03008ea5c4008cfce5826b74257f69fc755541fdf45255808be2f</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.1.33-nts-Win32-vs16-x86.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.21MB]<br />
+		<span class="md5sum">sha256: 80d55f2891b1ad4af1fcefabba5d80eb42cbb25218b31cc3c072302f14fe75bf</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+		
+		<div class="innerbox x86">
+		<span class="corners-top"><span></span></span>
+
+		<h4 id="php-8.1-ts-vs16-x86" name="php-8.1-ts-vs16-x86">VS16 x86 Thread Safe (2025-Jul-02 09:06:48)</h4>
+		<p>
+		<ul>
+		<li>
+			<a href="/downloads/releases/php-8.1.33-Win32-vs16-x86.zip">Zip</a>
+		[26.38MB]<br />
+		<span class="md5sum">sha256: 142c9515ede8d4015758eaf00e9b3f16f578aff0f9bcdb3459c537ea1b5d47eb</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-debug-pack-8.1.33-Win32-vs16-x86.zip">Debug Pack</a>
+		[24.6MB]<br />
+		<span class="md5sum">sha256: be0963317e3e5c08e2289070a077fe166da19433db593a782216da76793c0060</span>
+		</li>
+		<li>
+			<a href="/downloads/releases/php-devel-pack-8.1.33-Win32-vs16-x86.zip">Development package (SDK to develop PHP extensions)</a>
+		[1.21MB]<br />
+		<span class="md5sum">sha256: a921382def72689140cba60630e8cd4736222ad675d7456d0d5dcc916afc0d31</span>
+		</li>
+		</ul>
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+				</div>
+		<span class="corners-bottom"><span></span></span>
+		</div> <!-- block -->
+	
+				    <p class="t-center">
+				    </p>
+				</div> <!-- .content -->
+			    </li><!-- #main-column -->
+
+			</ul> <!-- #content-columns -->
+		    </li> <!-- #content -->
+
+            <li id="footer">
+                <span class="corners-top"><span></span></span>
+
+                <div class="info">
+                    <a href="http://www.php.net/copyright.php">Copyright &copy; 2001-2025 The PHP Group</a><br>
+                    All rights reserved.
+                </div>
+                
+                <span class="corners-bottom"><span></span></span>
+            </li>
+        </ul>
+    </body>
+</html>
