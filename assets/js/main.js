@@ -1,6 +1,6 @@
 /**
-* Template Name: Axis
-* Template URL: https://bootstrapmade.com/axis-bootstrap-corporate-template/
+* Template Name: MeghTree Technologies
+* Template URL: https://bootstrapmade.com/MeghTree Technologies-bootstrap-corporate-template/
 * Updated: Sep 13 2025 with Bootstrap v5.3.8
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
