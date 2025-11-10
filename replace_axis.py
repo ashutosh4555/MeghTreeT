@@ -4,7 +4,7 @@ import re
 def replace_in_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as file:
         content = file.read()
-    new_content = re.sub(r'\baxis\b', 'MeghTree Technologies', content, flags=re.IGNORECASE)
+    new_content = re.sub(r'MeghTree Technologies', 'MeghTree Techonologies', content, flags=re.IGNORECASE)
     if new_content != content:
         with open(filepath, 'w', encoding='utf-8') as file:
             file.write(new_content)
