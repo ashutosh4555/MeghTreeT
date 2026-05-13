@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZS7LLSSNWL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZS7LLSSNWL');
+  </script>
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Page Not Found - MeghTree Technologies</title>
@@ -14,31 +23,26 @@
   <meta property="og:site_name" content="MeghTree Technologies">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="assets/img/site.webmanifest">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: MeghTree Technologies
-  * Template URL: https://bootstrapmade.com/MeghTree Technologies-bootstrap-corporate-template/
-  * Updated: Sep 13 2025 with Bootstrap v5.3.8
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="page-404">
@@ -47,36 +51,17 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <h1 class="sitename">MeghTree Technologies</h1>
+        <img src="assets/img/logo.webp" alt="MeghTree Technologies Logo">
+        <div class="sitename">MeghTree Technologies</div>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#why-us">Why Us</a></li>
+          <li><a href="index.html#journey">Process</a></li>
+          <li><a href="index.html#scorecard" class="btn-nav-cta">Get Assessment</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -104,22 +89,9 @@
               </p>
 
               <div class="error-actions" data-aos="fade-up" data-aos-delay="500">
-                <a href="/" class="btn-primary">Return Home</a>
-                <a href="/contact" class="btn-secondary">Contact Support</a>
+                <a href="index.html" class="btn-primary">Return Home</a>
+                <a href="index.html#scorecard" class="btn-secondary">Get Assessment</a>
               </div>
-
-              <div class="search-section" data-aos="fade-up" data-aos-delay="600">
-                <p class="search-label">Or search for what you need:</p>
-                <form class="search-form">
-                  <div class="search-input-group">
-                    <input type="text" class="search-input" placeholder="Search our website..." required="">
-                    <button type="submit" class="search-btn">
-                      <i class="bi bi-search"></i>
-                    </button>
-                  </div>
-                </form>
-              </div>
-
             </div>
 
           </div>
@@ -138,30 +110,30 @@
                       <i class="bi bi-house-door"></i>
                     </div>
                     <h4>Homepage</h4>
-                    <p>Return to our main page to explore our latest updates and featured content.</p>
-                    <a href="/" class="link-cta">Go to Homepage <i class="bi bi-arrow-right"></i></a>
+                    <p>Learn how MeghTree Technologies helps enterprises cut Azure cloud costs by 30–60%.</p>
+                    <a href="index.html" class="link-cta">Go to Homepage <i class="bi bi-arrow-right"></i></a>
                   </div>
                 </div>
 
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="900">
                   <div class="link-item">
                     <div class="link-icon">
-                      <i class="bi bi-briefcase"></i>
+                      <i class="bi bi-cpu"></i>
                     </div>
-                    <h4>Services</h4>
-                    <p>Discover our comprehensive range of business solutions and professional services.</p>
-                    <a href="/services" class="link-cta">View Services <i class="bi bi-arrow-right"></i></a>
+                    <h4>Our Services</h4>
+                    <p>Explore our FinOps, Kubernetes optimization, security, and cloud management services.</p>
+                    <a href="index.html#services" class="link-cta">View Services <i class="bi bi-arrow-right"></i></a>
                   </div>
                 </div>
 
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="1000">
                   <div class="link-item">
                     <div class="link-icon">
-                      <i class="bi bi-envelope"></i>
+                      <i class="bi bi-graph-down-arrow"></i>
                     </div>
-                    <h4>Contact Us</h4>
-                    <p>Get in touch with our team for personalized assistance and support.</p>
-                    <a href="/contact" class="link-cta">Contact Us <i class="bi bi-arrow-right"></i></a>
+                    <h4>Free Assessment</h4>
+                    <p>Get a personalised Azure savings report within 48 hours — completely free.</p>
+                    <a href="index.html#scorecard" class="link-cta">Start Assessment <i class="bi bi-arrow-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -176,65 +148,60 @@
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer">
 
     <div class="container footer-top">
       <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
+
+        <!-- Brand -->
+        <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/logo.webp" alt="MeghTree Technologies Logo">
             <span class="sitename">MeghTree Technologies</span>
           </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
+          <p class="footer-desc">Bangalore-based Microsoft Azure specialists helping enterprises cut cloud costs by 30–60% through autonomous FinOps and Kubernetes optimization.</p>
         </div>
 
+        <!-- Navigate -->
         <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Navigate</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#why-us">Why Us</a></li>
+            <li><a href="index.html#journey">Process</a></li>
+            <li><a href="index.html#scorecard">Get Assessment</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
+        <!-- Connect -->
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Connect</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="https://www.linkedin.com/company/meghtree-technologies" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="mailto:info@meghtree.co.in">info@meghtree.co.in</a></li>
+            <li><a href="mailto:sales@meghtree.co.in">sales@meghtree.co.in</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
-          <p>United States</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
+        <!-- Contact -->
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h4>Contact</h4>
+          <p>Property No.224, 3rd Floor, Ranka Junction 80/3</p>
+          <p>Vijinapur Village, Old Madras Road, KR Puram Hobli</p>
+          <p>Bengaluru 560016, Karnataka</p>
+          <p class="mt-3"><a href="tel:+919980471559">+91 99804 71559</a></p>
         </div>
 
       </div>
     </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">MeghTree Technologies</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    <!-- Bottom Bar -->
+    <div class="container footer-bottom">
+      <p class="copyright-text">&copy; <span id="copyright-year"></span> MeghTree Technologies. All rights reserved</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
 
@@ -248,16 +215,13 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Dynamic copyright year -->
+  <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 
 </body>
 
