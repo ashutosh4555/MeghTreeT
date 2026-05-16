@@ -3074,3 +3074,156 @@ section,
 .cookie-banner .cookie-btn-accept:hover {
   background: #1d4ed8;
 }
+/*--------------------------------------------------------------
+# Methodology Interactive Section
+--------------------------------------------------------------*/
+.methodology-interactive {
+  position: relative;
+  z-index: 1;
+}
+
+.methodology-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-right: 2px solid var(--border2);
+  padding-right: 20px;
+}
+
+.methodology-btn {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 14px 20px;
+  font-family: var(--heading-font);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--default-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.methodology-btn:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 95%);
+  color: var(--heading-color);
+  transform: translateX(5px);
+}
+
+.methodology-btn.active {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.methodology-content-wrapper {
+  position: relative;
+  min-height: 400px;
+  background: var(--surface-color);
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.methodology-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.methodology-content.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  visibility: visible;
+  position: relative; /* Allows height to adjust based on active content */
+}
+
+.methodology-content .service-icon {
+  width: 60px;
+  height: 60px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.methodology-content .service-icon i {
+  font-size: 28px;
+  color: var(--accent-color);
+}
+
+.methodology-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+}
+
+.methodology-content .lead-text {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.methodology-content .content-details {
+  border-top: 1px solid var(--border2);
+  padding-top: 20px;
+}
+
+.methodology-content .tech-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+
+.methodology-content .tech-bullets li {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--default-color);
+}
+
+.methodology-content .tech-bullets li i {
+  color: #10B981;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 991px) {
+  .methodology-menu {
+    border-right: none;
+    border-bottom: 2px solid var(--border2);
+    padding-right: 0;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .methodology-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    flex: 1 1 calc(50% - 10px);
+    text-align: center;
+  }
+  .methodology-btn:hover {
+    transform: translateY(-2px);
+  }
+  .methodology-content {
+    padding: 25px;
+  }
+}

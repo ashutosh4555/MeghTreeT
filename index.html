@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZS7LLSSNWL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-ZS7LLSSNWL');
   </script>
@@ -28,7 +28,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://meghtree.co.in/">
   <meta property="og:title" content="MeghTree Technologies | Cut Azure Cloud Costs 30–60% | FinOps Partner Bangalore">
-  <meta property="og:description" content="Microsoft Azure partner specialising in autonomous cloud and Kubernetes cost optimization. Cut your cloud bill by 30–60%. Free 48-hour cost assessment.">
+  <meta property="og:description"
+    content="Microsoft Azure partner specialising in autonomous cloud and Kubernetes cost optimization. Cut your cloud bill by 30–60%. Free 48-hour cost assessment.">
   <meta property="og:image" content="https://meghtree.co.in/assets/img/og-image.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -39,7 +40,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://meghtree.co.in/">
   <meta name="twitter:title" content="MeghTree Technologies | Cut Azure Cloud Costs 30–60% | FinOps Partner Bangalore">
-  <meta name="twitter:description" content="Microsoft Azure partner specialising in autonomous cloud and Kubernetes cost optimization. Cut your cloud bill by 30–60%. Free 48-hour cost assessment.">
+  <meta name="twitter:description"
+    content="Microsoft Azure partner specialising in autonomous cloud and Kubernetes cost optimization. Cut your cloud bill by 30–60%. Free 48-hour cost assessment.">
   <meta name="twitter:image" content="https://meghtree.co.in/assets/img/og-image.webp">
 
   <!-- Favicons -->
@@ -161,9 +163,11 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#why-us">Why Us</a></li>
-          <li><a href="#journey">Process</a></li>
+          <li><a href="#problem">The Problem</a></li>
+          <li><a href="#framework">Framework</a></li>
+          <li><a href="#ai">AI FinOps</a></li>
+          <li><a href="#scope">Scope</a></li>
+          <li><a href="#clouds">Coverage</a></li>
           <li><a href="#scorecard" class="btn-nav-cta">Get Assessment</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -176,483 +180,651 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section light-background">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="hero-content">
-              <h1 data-aos="fade-up" data-aos-delay="200">Scale Your AI, Not Your Cloud Bill.</h1>
-              <p data-aos="fade-up" data-aos-delay="300">With GPU prices rising 15%, efficiency is no longer optional.
-                MeghTree automatically matches each AI workload to the right instance type, cutting compute costs by
-                60-90% without risking downtime.</p>
-              <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
-                <a href="#scorecard" class="btn-primary">Get Your Free 48-Hour Cost Assessment</a>
-              </div>
-              <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
-                <div class="stat-item">
-                  <div class="stat-number">42%</div>
-                  <div class="stat-label">Avg. Cost Reduction</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">30 min</div>
-                  <div class="stat-label">Spot Migration Time</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">Zero</div>
-                  <div class="stat-label">Engineering Effort</div>
-                </div>
+              <div class="badge-label mb-3"
+                style="display:inline-block; padding: 6px 16px; background: rgba(0, 120, 215, 0.1); color: var(--accent-color); border-radius: 50px; font-weight: 600; font-size: 0.85rem;">
+                Cloud &amp; AI Cost Intelligence</div>
+              <h1 data-aos="fade-up" data-aos-delay="200">Your Cloud Bill Is Your Biggest<br><span
+                  style="color: var(--default-color); font-weight: 300;">Untapped Advantage.</span></h1>
+              <p data-aos="fade-up" data-aos-delay="300" style="font-size: 1.1rem; margin-top:20px; line-height: 1.8;">
+                Meghtree is the first company engineers and CXOs should call when cloud and AI costs become a problem —
+                or before they do. We turn spend into strategy, across every public cloud and every technology category.
+              </p>
+              <div class="hero-cta" data-aos="fade-up" data-aos-delay="400"
+                style="margin-top: 30px; display:flex; gap: 15px; flex-wrap: wrap;">
+                <a href="#scorecard" class="btn-primary">Get Your Free Cost Audit</a>
+                <a href="#framework" class="btn-ghost"
+                  style="padding: 12px 24px; border: 2px solid color-mix(in srgb, var(--default-color), transparent 80%); border-radius: 8px; color: var(--heading-color); text-decoration: none; font-weight: 600; transition: 0.3s;">See
+                  Our Framework</a>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-6">
+          <div class="col-lg-6 mt-5 mt-lg-0">
             <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
-              <img src="assets/img/about/about-square-10.webp" alt="MeghTree Technologies Azure cloud optimization results" class="img-fluid">
-              <div class="floating-card" data-aos="zoom-in" data-aos-delay="600">
-                <div class="card-icon">
-                  <i class="bi bi-graph-up-arrow"></i>
-                </div>
-                <div class="card-content">
-                  <h5>Revenue Growth</h5>
-                  <div class="growth-percentage">+45%</div>
-                </div>
-              </div>
+              <img src="assets/img/about/about-square-10.webp" alt="MeghTree Technologies Cloud Intelligence"
+                class="img-fluid rounded-4 shadow-lg">
             </div>
           </div>
         </div>
-
       </div>
+    </section>
 
-    </section><!-- /Hero Section -->
+    <!-- Stats Bar -->
+    <section class="stats-bar section py-5"
+      style="background: var(--surface-color); border-bottom: 1px solid var(--border2);">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-6 col-md-4 col-lg-2">
+            <h3 style="color: var(--accent-color); font-weight: 800; font-size: 2.2rem; margin-bottom: 5px;">98%</h3>
+            <p style="font-size: 0.85rem; color: var(--default-color); margin-bottom: 5px; font-weight: 500;">of FinOps
+              teams now manage AI spend</p>
+            <small style="font-size: 0.7rem; color: var(--muted); font-style: italic;">FinOps Foundation 2026</small>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <h3 style="color: var(--accent-color); font-weight: 800; font-size: 2.2rem; margin-bottom: 5px;">$83B+</h3>
+            <p style="font-size: 0.85rem; color: var(--default-color); margin-bottom: 5px; font-weight: 500;">in annual
+              cloud spend represented</p>
+            <small style="font-size: 0.7rem; color: var(--muted); font-style: italic;">FinOps Foundation 2026</small>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <h3 style="color: var(--accent-color); font-weight: 800; font-size: 2.2rem; margin-bottom: 5px;">78%</h3>
+            <p style="font-size: 0.85rem; color: var(--default-color); margin-bottom: 5px; font-weight: 500;">report
+              directly to the CTO or CIO</p>
+            <small style="font-size: 0.7rem; color: var(--muted); font-style: italic;">FinOps Foundation 2026</small>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <h3 style="color: var(--accent-color); font-weight: 800; font-size: 2.2rem; margin-bottom: 5px;">66%</h3>
+            <p style="font-size: 0.85rem; color: var(--default-color); margin-bottom: 5px; font-weight: 500;">wasted on
+              underutilized resources</p>
+            <small style="font-size: 0.7rem; color: var(--muted); font-style: italic;">Harness FinOps 2025</small>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <h3 style="color: var(--accent-color); font-weight: 800; font-size: 2.2rem; margin-bottom: 5px;">86%</h3>
+            <p style="font-size: 0.85rem; color: var(--default-color); margin-bottom: 5px; font-weight: 500;">take a
+              week+ to detect idle resources</p>
+            <small style="font-size: 0.7rem; color: var(--muted); font-style: italic;">Harness FinOps 2025</small>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <h3 style="color: var(--accent-color); font-weight: 800; font-size: 2.2rem; margin-bottom: 5px;">90%</h3>
+            <p style="font-size: 0.85rem; color: var(--default-color); margin-bottom: 5px; font-weight: 500;">now manage
+              SaaS spend</p>
+            <small style="font-size: 0.7rem; color: var(--muted); font-style: italic;">FinOps Foundation 2026</small>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Market Reality Section -->
-    <section id="market-reality" class="market-reality">
+    <!-- Problem Section -->
+    <section id="problem" class="market-reality section">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <div class="badge-label">The Cloud Efficiency Crisis</div>
-          <h2>The Numbers Don't Lie</h2>
-          <p>Your cloud bill is likely carrying more waste than you think. These industry averages show where the money
-            goes.</p>
+          <div class="badge-label">The Problem We Solve</div>
+          <h2>The Data Is Clear.<br>Cloud Waste Is a Leadership Problem.</h2>
+          <p>From 1,192 FinOps practitioners representing $83B+ in annual cloud spend, the picture is unambiguous — cost
+            visibility, governance, and automation are critically behind where they need to be.</p>
         </div>
         <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-4 col-md-6">
-            <div class="stat-card">
-              <div class="stat-icon"><i class="bi bi-fire"></i></div>
-              <div class="big-number"><span class="accent">35%</span></div>
-              <div class="stat-title">Of Cloud Spend Is Wasted</div>
-              <div class="stat-desc">More than a third of the average Azure bill goes to idle, oversized, or unused
-                resources.</div>
+            <div class="stat-card h-100" style="border-top: 3px solid #E24B4A; padding: 30px;">
+              <div class="big-number" style="color:#E24B4A; font-size: 3rem; margin-bottom: 15px;">55%</div>
+              <div class="stat-desc" style="font-size: 0.95rem;">of developers ignore cost management entirely — and
+                only 35% cite cloud cost efficiency as a key measure of their success.</div>
+              <div style="font-size:0.7rem; color:var(--muted); margin-top:20px; font-style: italic;">Harness FinOps in
+                Focus 2025</div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="stat-card">
-              <div class="stat-icon"><i class="bi bi-cpu"></i></div>
-              <div class="big-number"><span class="accent">8%</span></div>
-              <div class="stat-title">Average K8s CPU Utilization</div>
-              <div class="stat-desc">The average Kubernetes cluster uses only 8% of its provisioned CPU. The rest is
-                waste.</div>
+            <div class="stat-card h-100" style="border-top: 3px solid #F59E0B; padding: 30px;">
+              <div class="big-number" style="color:#F59E0B; font-size: 3rem; margin-bottom: 15px;">68%</div>
+              <div class="stat-desc" style="font-size: 0.95rem;">of development teams do not have fully automated
+                cost-saving practices — leaving optimization dependent on slow human review cycles.</div>
+              <div style="font-size:0.7rem; color:var(--muted); margin-top:20px; font-style: italic;">Harness FinOps in
+                Focus 2025</div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="stat-card">
-              <div class="stat-icon"><i class="bi bi-graph-up-arrow"></i></div>
-              <div class="big-number"><span class="up">+15%</span></div>
-              <div class="stat-title">H200 GPU Price Hike</div>
-              <div class="stat-desc">AI and ML costs are climbing fast. If you run GPU jobs, your bill is likely rising
-                faster than your budget.</div>
+            <div class="stat-card h-100" style="border-top: 3px solid #E24B4A; padding: 30px;">
+              <div class="big-number" style="color:#E24B4A; font-size: 3rem; margin-bottom: 15px;">52%</div>
+              <div class="stat-desc" style="font-size: 0.95rem;">of engineering leaders say organizations focus on cloud
+                cost optimization only after deployment — not during design.</div>
+              <div style="font-size:0.7rem; color:var(--muted); margin-top:20px; font-style: italic;">Harness FinOps in
+                Focus 2025</div>
             </div>
           </div>
-        </div>
-        <div class="reality-cta" data-aos="fade-up" data-aos-delay="200">
-          <p>"Most teams cannot see where cloud waste is hiding. We show it clearly, then help remove it."</p>
-          <a href="#scorecard" class="btn-glow">See How Much You're Wasting <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-    </section><!-- /Market Reality Section -->
-
-    <!-- Trust Bar -->
-    <div class="trust-bar">
-      <div class="container">
-        <div class="trust-inner">
-          <span class="trust-label">Trusted Partners</span>
-          <div class="trust-item">
-            <div class="trust-icon"><i class="bi bi-award-fill"></i></div>
-            <div class="trust-text">
-              <strong>Microsoft Azure</strong>
-              <span>Authorized Cloud Partner</span>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-card h-100" style="border-top: 3px solid #A78BFA; padding: 30px;">
+              <div class="big-number" style="color:#A78BFA; font-size: 3rem; margin-bottom: 15px;">2–4×</div>
+              <div class="stat-desc" style="font-size: 0.95rem;">more influence over technology selection is shown by
+                FinOps practitioners with VP/C-suite engagement versus those limited to Director-level only.</div>
+              <div style="font-size:0.7rem; color:var(--muted); margin-top:20px; font-style: italic;">FinOps Foundation
+                2026</div>
             </div>
           </div>
-          <div class="trust-item">
-            <div class="trust-icon"><i class="bi bi-lightning-charge-fill"></i></div>
-            <div class="trust-text">
-              <strong>Autonomous FinOps</strong>
-              <span>AI-Driven Cloud Optimization</span>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-card h-100" style="border-top: 3px solid var(--accent-color); padding: 30px;">
+              <div class="big-number" style="color:var(--accent-color); font-size: 3rem; margin-bottom: 15px;">81%</div>
+              <div class="stat-desc" style="font-size: 0.95rem;">of FinOps teams operate with a centralized enablement
+                or hub-and-spoke model — yet most still struggle to scale optimization.</div>
+              <div style="font-size:0.7rem; color:var(--muted); margin-top:20px; font-style: italic;">FinOps Foundation
+                2026</div>
             </div>
-            <span class="badge-pill ms-2">New</span>
           </div>
-          <div class="trust-item">
-            <div class="trust-icon"><i class="bi bi-star-fill"></i></div>
-            <div class="trust-text">
-              <strong>G2 Spring 2026 Leader</strong>
-              <span>Cloud Cost Management Category</span>
-            </div>
-            <span class="badge-pill gold ms-2">G2 Leader</span>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon"><i class="bi bi-shield-check"></i></div>
-            <div class="trust-text">
-              <strong>15+ Years Experience</strong>
-              <span>Bangalore-based Azure Specialists</span>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-card h-100" style="border-top: 3px solid #10B981; padding: 30px;">
+              <div class="big-number" style="color:#10B981; font-size: 3rem; margin-bottom: 15px;">62%</div>
+              <div class="stat-desc" style="font-size: 0.95rem;">of developers actively want more control over and
+                responsibility for cloud costs — the desire is there, but the tooling is not.</div>
+              <div style="font-size:0.7rem; color:var(--muted); margin-top:20px; font-style: italic;">Harness FinOps in
+                Focus 2025</div>
             </div>
           </div>
         </div>
       </div>
-    </div><!-- /Trust Bar -->
+    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
+    <!-- Framework Section -->
+    <section id="framework" class="services section light-background">
       <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Our Services</span>
-        <h2>End-to-End Azure Cloud Excellence</h2>
-        <p>From autonomous cost optimization to security and operations, every service is designed to improve cloud ROI
-          and free up your engineering team.</p>
-      </div><!-- End Section Title -->
+        <span class="subtitle">Our Methodology</span>
+        <h2>A Layered FinOps &amp; Optimization Framework</h2>
+        <p>From funding enablement to architectural redesign — every layer of cloud and AI spend is engineered for
+          efficiency. Visibility first. Automation always.</p>
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="methodology-interactive">
+          <div class="row gx-5">
+            <!-- Left Sidebar Menu -->
+            <div class="col-lg-4">
+              <div class="methodology-menu">
+                <button class="methodology-btn active" data-target="layer-0">Layer 0: Funding &amp; Adoption</button>
+                <button class="methodology-btn" data-target="layer-1">Cost Visibility</button>
+                <button class="methodology-btn" data-target="layer-2">Governance &amp; Control</button>
+                <button class="methodology-btn" data-target="layer-3">K8s Cost Visibility</button>
+                <button class="methodology-btn" data-target="layer-4">K8s Optimization</button>
+                <button class="methodology-btn" data-target="layer-5">Infra Optimization</button>
+                <button class="methodology-btn" data-target="layer-6">Commitment &amp; Rightsizing</button>
+                <button class="methodology-btn" data-target="layer-7">Architecture Optimization</button>
+                <button class="methodology-btn" data-target="layer-cross">Cross-Layer: Observability</button>
+              </div>
+            </div>
 
-        <div class="row gy-4">
+            <!-- Right Content Card -->
+            <div class="col-lg-8">
+              <div class="methodology-content-wrapper">
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item featured-service">
-              <span class="featured-badge"><i class="bi bi-lightning-charge-fill"></i> Autonomous Engine</span>
-              <div class="service-icon"><i class="bi bi-cpu"></i></div>
-              <h3>Autonomous FinOps &amp; K8s Optimization</h3>
-              <p>We do more than analyse waste. Our autonomous engine continuously right-sizes your Kubernetes clusters and Azure
-                resources in real time.</p>
-              <ul class="tech-bullets">
-                <li>Autonomous execution — zero manual intervention</li>
-                <li>30-minute predictive spot instance migration</li>
-                <li>Millicore-level pod rightsizing</li>
-              </ul>
-              <a href="#scorecard" class="service-link">Start Free Assessment <i class="bi bi-arrow-right"></i></a>
+                <!-- Layer 0 -->
+                <div class="methodology-content active" id="layer-0">
+                  <div class="service-icon"><i class="bi bi-wallet2"></i></div>
+                  <h3>Layer 0: Funding &amp; Adoption</h3>
+                  <p class="lead-text">Enable migration, modernization, and PoC funding through cloud provider programs.
+                  </p>
+                  <div class="content-details">
+                    <p>Reduce day-one investment barriers before a single workload moves.</p>
+                    <ul class="tech-bullets">
+                      <li><i class="bi bi-check-circle-fill"></i> Migration Funding</li>
+                      <li><i class="bi bi-check-circle-fill"></i> PoC Credits</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Modernization Programs</li>
+                    </ul>
+                    <a href="#scorecard" class="btn-ghost mt-3 d-inline-block">Learn More <i
+                        class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- Layer 1 -->
+                <div class="methodology-content" id="layer-1">
+                  <div class="service-icon"><i class="bi bi-eye"></i></div>
+                  <h3>Layer 1: Cost Visibility</h3>
+                  <p class="lead-text">Full-spectrum insight into where every dollar goes — by service, team, workload,
+                    and time.</p>
+                  <div class="content-details">
+                    <p>No billing surprises. No hidden waste. You cannot optimize what you cannot see.</p>
+                    <ul class="tech-bullets">
+                      <li><i class="bi bi-check-circle-fill"></i> Spend Analytics</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Anomaly Detection</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Real-Time Dashboards</li>
+                    </ul>
+                    <a href="#scorecard" class="btn-ghost mt-3 d-inline-block">Learn More <i
+                        class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- Layer 2 -->
+                <div class="methodology-content" id="layer-2">
+                  <div class="service-icon"><i class="bi bi-shield-lock"></i></div>
+                  <h3>Layer 2: Governance &amp; Control</h3>
+                  <p class="lead-text">Budget thresholds, tagging frameworks, and cost ownership workflows.</p>
+                  <div class="content-details">
+                    <p>Accountability structures that make every engineer a FinOps partner — not a bystander.</p>
+                    <ul class="tech-bullets">
+                      <li><i class="bi bi-check-circle-fill"></i> Budgets &amp; Alerts</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Tagging Strategy</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Cost Ownership</li>
+                    </ul>
+                    <a href="#scorecard" class="btn-ghost mt-3 d-inline-block">Learn More <i
+                        class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- Layer 3 -->
+                <div class="methodology-content" id="layer-3">
+                  <div class="service-icon"><i class="bi bi-diagram-3"></i></div>
+                  <h3>Layer 3: K8s Cost Visibility</h3>
+                  <p class="lead-text">Namespace-level, pod-level, and team-level cost attribution for container
+                    workloads.</p>
+                  <div class="content-details">
+                    <p>Identify idle resources before they drain budget silently for weeks.</p>
+                    <ul class="tech-bullets">
+                      <li><i class="bi bi-check-circle-fill"></i> Namespace Allocation</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Pod-Level Cost</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Idle Detection</li>
+                    </ul>
+                    <a href="#scorecard" class="btn-ghost mt-3 d-inline-block">Learn More <i
+                        class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- Layer 4 -->
+                <div class="methodology-content" id="layer-4">
+                  <div class="service-icon"><i class="bi bi-cpu"></i></div>
+                  <h3>Layer 4: K8s Optimization</h3>
+                  <p class="lead-text">Autonomous container optimization: bin-packing, autoscaling, and node
+                    rightsizing.</p>
+                  <div class="content-details">
+                    <p>Running continuously without human intervention.</p>
+                    <ul class="tech-bullets">
+                      <li><i class="bi bi-check-circle-fill"></i> Bin-Packing &amp; Autoscaling</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Node Optimization</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Autonomous Mode</li>
+                    </ul>
+                    <a href="#scorecard" class="btn-ghost mt-3 d-inline-block">Learn More <i
+                        class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- Layer 5 -->
+                <div class="methodology-content" id="layer-5">
+                  <div class="service-icon"><i class="bi bi-hdd-network"></i></div>
+                  <h3>Layer 5: Infra Optimization</h3>
+                  <p class="lead-text">Spot orchestration, predictive autoscaling, and hybrid spot/on-demand strategies.
+                  </p>
+                  <div class="content-details">
+                    <p>Maximize compute savings without interruption risk or performance compromise.</p>
+                    <ul class="tech-bullets">
+                      <li><i class="bi bi-check-circle-fill"></i> Spot Orchestration</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Predictive Scaling</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Hybrid Compute</li>
+                    </ul>
+                    <a href="#scorecard" class="btn-ghost mt-3 d-inline-block">Learn More <i
+                        class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- Layer 6 -->
+                <div class="methodology-content" id="layer-6">
+                  <div class="service-icon"><i class="bi bi-percent"></i></div>
+                  <h3>Layer 6: Commitment &amp; Rightsizing</h3>
+                  <p class="lead-text">Savings plans, reserved capacity, and compute rightsizing.</p>
+                  <div class="content-details">
+                    <p>Baseline workload cost reduction with maximum coverage and utilization rates.</p>
+                    <ul class="tech-bullets">
+                      <li><i class="bi bi-check-circle-fill"></i> Savings Plans</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Reserved Capacity</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Rightsizing</li>
+                    </ul>
+                    <a href="#scorecard" class="btn-ghost mt-3 d-inline-block">Learn More <i
+                        class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- Layer 7 -->
+                <div class="methodology-content" id="layer-7">
+                  <div class="service-icon"><i class="bi bi-layers"></i></div>
+                  <h3>Layer 7: Architecture Optimization</h3>
+                  <p class="lead-text">ARM compute migration, intelligent storage tiering, cloud-native patterns.</p>
+                  <div class="content-details">
+                    <p>Efficiency baked into how you build — not retrofitted after deployment.</p>
+                    <ul class="tech-bullets">
+                      <li><i class="bi bi-check-circle-fill"></i> ARM Migration</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Storage Tiering</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Cloud-Native Design</li>
+                    </ul>
+                    <a href="#scorecard" class="btn-ghost mt-3 d-inline-block">Learn More <i
+                        class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- Cross-Layer -->
+                <div class="methodology-content" id="layer-cross">
+                  <div class="service-icon"><i class="bi bi-activity"></i></div>
+                  <h3>Cross-Layer: Observability</h3>
+                  <p class="lead-text">Metrics, logs, traces, and cost correlation stitched across all layers.</p>
+                  <div class="content-details">
+                    <p>Observability that makes optimization continuous and self-sustaining.</p>
+                    <ul class="tech-bullets">
+                      <li><i class="bi bi-check-circle-fill"></i> Cost-Aware Observability</li>
+                      <li><i class="bi bi-check-circle-fill"></i> FinOps Dashboards</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Anomaly Detection</li>
+                    </ul>
+                    <a href="#scorecard" class="btn-ghost mt-3 d-inline-block">Learn More <i
+                        class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
-            <div class="service-item featured-service">
-              <div class="service-icon"><i class="bi bi-cloud-check"></i></div>
-              <h3>Cloud Infrastructure Management</h3>
-              <p>Your Azure environment is complex. Our AIOps-powered management keeps it healthy, performant, and lean
-                without adding manual overhead.</p>
-              <ul class="tech-bullets">
-                <li>24/7 Azure Monitor + intelligent alerting</li>
-                <li>Auto-healing runbooks for common failures</li>
-                <li>Monthly performance &amp; cost health reports</li>
-              </ul>
-              <a href="#scorecard" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item featured-service">
-              <div class="service-icon"><i class="bi bi-shield-lock"></i></div>
-              <h3>Security &amp; Compliance</h3>
-              <p>A breach costs more than money. We build a layered Zero Trust security posture across your Azure
-                estate, with compliance built in from day one.</p>
-              <ul class="tech-bullets">
-                <li>Azure Sentinel SIEM + threat detection</li>
-                <li>Zero Trust identity &amp; access controls</li>
-                <li>SOC 2 / ISO 27001 compliance readiness</li>
-              </ul>
-              <a href="#scorecard" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
-            <div class="service-item featured-service">
-              <div class="service-icon"><i class="bi bi-piggy-bank"></i></div>
-              <h3>Cost Optimization</h3>
-              <p>Beyond the autonomous optimization layer, our FinOps team optimises reserved instances, savings plans,
-                orphaned resources, and commitment discounts to capture more value.</p>
-              <ul class="tech-bullets">
-                <li>Reserved instance &amp; savings plan right-sizing</li>
-                <li>Orphaned resource &amp; zombie workload cleanup</li>
-                <li>Azure Cost Management custom dashboards</li>
-              </ul>
-              <a href="#scorecard" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item featured-service">
-              <div class="service-icon"><i class="bi bi-arrow-repeat"></i></div>
-              <h3>Application Modernization</h3>
-              <p>Legacy architecture slows delivery. We modernize workloads on Azure to reduce operational overhead and
-                improve deployment speed.</p>
-              <ul class="tech-bullets">
-                <li>Lift-shift to PaaS, AKS &amp; containers</li>
-                <li>Azure App Service &amp; Functions migration</li>
-                <li>CI/CD pipelines via Azure DevOps</li>
-              </ul>
-              <a href="#scorecard" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
-            <div class="service-item featured-service">
-              <div class="service-icon"><i class="bi bi-hdd-network"></i></div>
-              <h3>Backup &amp; Disaster Recovery</h3>
-              <p>Downtime is expensive. We design geo-redundant Azure recovery solutions aligned to your RTO and RPO,
-                then test them regularly.</p>
-              <ul class="tech-bullets">
-                <li>Geo-redundant Azure Backup &amp; replication</li>
-                <li>RTO/RPO-aligned recovery architecture</li>
-                <li>Automated failover testing &amp; DR drills</li>
-              </ul>
-              <a href="#scorecard" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
         </div>
-
       </div>
+    </section>
 
-    </section><!-- /Services Section -->
-    <section id="why-us" class="why-us section light-background">
-
-      <!-- Section Title -->
+    <!-- AI FinOps Section -->
+    <section id="ai" class="why-us section">
       <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Why Us</span>
-        <h2>Why 50+ Enterprises Trust MeghTree to Guard Their Cloud Spend</h2>
-        <p>Cloud waste is a business risk. Every rupee spent on idle compute or bloated clusters is a rupee not spent
-          on product, people, or growth.</p>
-      </div><!-- End Section Title -->
+        <span class="subtitle">AI FinOps</span>
+        <h2>AI Spend Is the Fastest-Growing Cost Problem</h2>
+        <p>98% of FinOps teams now manage AI spend — up from just 31% two years ago. AI cost management is now the #1
+          skillset gap. Meghtree is built for this moment.</p>
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row mb-5">
-          <div class="col-lg-7" data-aos="fade-right" data-aos-delay="150">
-            <div class="content">
-              <h2>We're Not a Generic IT Consultancy. We're a Specialist FinOps Partner.</h2>
-              <p>Most cloud partners run a one-time review, send a PDF, and stop there. We deploy <b>our
-                  autonomous optimization engine</b> and pair it with 15 years of Azure expertise to reduce waste continuously.</p>
-              <p class="content-followup">The result is simple: clients often see <b>30-60% lower cloud spend</b> within
-                90 days, and the savings grow as infrastructure scales.</p>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="feature-item p-4 h-100"
+              style="background: var(--surface-color); border: 1px solid var(--border2); border-radius: 12px;">
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--heading-color); margin-bottom: 15px;"><i
+                  class="bi bi-robot text-primary me-2"></i> LLM &amp; Inference Cost Governance</h3>
+              <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">Token-level cost attribution, model
+                benchmarking, and intelligent routing. The #1 requested FinOps tool feature is granular AI spend
+                monitoring.</p>
+              <ul class="tech-bullets mt-3"
+                style="list-style-type: none; padding-left: 0; font-size: 0.9rem; color: var(--muted);">
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Per-model, per-team
+                  token spend tracking</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Prompt caching to
+                  reduce redundant inference costs</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Model routing:
+                  balance cost vs quality</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Budget guardrails on
+                  AI API consumption</li>
+              </ul>
             </div>
           </div>
-          <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
-            <div class="image-wrapper">
-              <img src="assets/img/about/about-8.webp" alt="FinOps and cloud optimization expertise"
-                class="img-fluid rounded-3" loading="lazy">
+          <div class="col-lg-6">
+            <div class="feature-item p-4 h-100"
+              style="background: var(--surface-color); border: 1px solid var(--border2); border-radius: 12px;">
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--heading-color); margin-bottom: 15px;"><i
+                  class="bi bi-lightning-charge text-primary me-2"></i> AI Infrastructure Rightsizing</h3>
+              <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">GPU utilization optimization,
+                training job scheduling, and spot strategies. AI infrastructure has new pricing models — we build the
+                playbooks.</p>
+              <ul class="tech-bullets mt-3"
+                style="list-style-type: none; padding-left: 0; font-size: 0.9rem; color: var(--muted);">
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> GPU cluster
+                  utilization monitoring</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Spot orchestration
+                  for training jobs</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Right-instance
+                  selection for inference</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Idle GPU detection
+                  &amp; shutdown</li>
+              </ul>
             </div>
           </div>
-        </div>
-
-        <div class="features-grid" data-aos="fade-up" data-aos-delay="300">
-          <div class="row g-4">
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="feature-item">
-                <div class="icon-wrapper">
-                  <i class="bi bi-lightning-charge-fill"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Autonomous Optimization Engine</h3>
-                  <p>Our platform right-sizes, spot-migrates, and governs Azure spend around the clock, without
-                    tickets or delays.</p>
-                </div>
-              </div>
+          <div class="col-lg-6">
+            <div class="feature-item p-4 h-100"
+              style="background: var(--surface-color); border: 1px solid var(--border2); border-radius: 12px;">
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--heading-color); margin-bottom: 15px;"><i
+                  class="bi bi-bar-chart-steps text-primary me-2"></i> AI Observability &amp; Cost Correlation</h3>
+              <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">Connect latency, error rates, and
+                throughput directly to per-request cost with purpose-built observability pipelines.</p>
+              <ul class="tech-bullets mt-3"
+                style="list-style-type: none; padding-left: 0; font-size: 0.9rem; color: var(--muted);">
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Request-level cost
+                  tracing for AI APIs</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Latency-vs-cost
+                  trade-off dashboards</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Anomaly detection on
+                  AI spend spikes</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Unified metrics,
+                  logs, and tracing</li>
+              </ul>
             </div>
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
-              <div class="feature-item">
-                <div class="icon-wrapper">
-                  <i class="bi bi-award-fill"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Dual Accreditation — Azure + FinOps</h3>
-                  <p>As an authorized <b>Microsoft Azure Partner</b> with deep <b>FinOps expertise</b>, we combine
-                    enterprise cloud depth with autonomous optimisation under one accountable team.</p>
-                </div>
-              </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="feature-item p-4 h-100"
+              style="background: var(--surface-color); border: 1px solid var(--border2); border-radius: 12px;">
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--heading-color); margin-bottom: 15px;"><i
+                  class="bi bi-diagram-2 text-primary me-2"></i> Agentic AI Workflow Cost Management</h3>
+              <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">Agentic pipelines introduce
+                unpredictable cost loops. We govern multi-step workflows before they breach budgets.</p>
+              <ul class="tech-bullets mt-3"
+                style="list-style-type: none; padding-left: 0; font-size: 0.9rem; color: var(--muted);">
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Per-run cost
+                  ceilings for agent workflows</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Tool-call cost
+                  attribution</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Context window
+                  optimization strategies</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-arrow-right text-primary me-2"></i> Cost-aware retrieval
+                  pipeline design</li>
+              </ul>
             </div>
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="feature-item">
-                <div class="icon-wrapper">
-                  <i class="bi bi-graph-down-arrow"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>30–60% Cost Reduction — Real Numbers</h3>
-                  <p>We do not sell projections. We run a free 48-hour assessment in your real environment so you can
-                    see savings before making a commitment.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
-              <div class="feature-item">
-                <div class="icon-wrapper">
-                  <i class="bi bi-shield-lock-fill"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Zero-Risk Engagement Model</h3>
-                  <p>Our 48-hour assessment uses <b>read-only access</b>. We do not touch workloads, change
-                    configuration, or hold your data.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="feature-item">
-                <div class="icon-wrapper">
-                  <i class="bi bi-clock-history"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>15+ Years of Azure Depth</h3>
-                  <p>Our Bangalore-based team has delivered <b>850+ Azure projects</b> across healthcare, fintech,
-                    manufacturing, and SaaS, giving us practical depth across real-world cloud environments.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
-              <div class="feature-item">
-                <div class="icon-wrapper">
-                  <i class="bi bi-headset"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Dedicated FinOps Ownership</h3>
-                  <p>You get a <b>named FinOps engineer</b>, monthly savings reports, and a direct escalation path
-                    instead of a generic ticket queue.</p>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
-
       </div>
+    </section>
 
-    </section><!-- /Why Us Section -->
-
-
-
-    <!-- 6-Phase Engagement Journey -->
-    <section id="journey" class="engagement-journey section light-background">
+    <!-- FinOps Maturity (Replaces Journey) -->
+    <section id="maturity" class="engagement-journey section light-background">
       <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Our Process</span>
-        <h2>The 6-Phase Engagement Journey</h2>
-        <p>From the first conversation to ongoing optimisation, this is how we deliver measurable savings with no
-          surprises.</p>
+        <span class="subtitle">FinOps Maturity</span>
+        <h2>We Take You From Reactive to Autonomous</h2>
+        <p>"Dashboards are table stakes of yesterday — reactive. You have to move to proactive, real-time, automation."
+        </p>
       </div>
       <div class="container">
         <div class="journey-timeline">
-
           <div class="phase-item" data-aos="fade-right" data-aos-delay="100">
             <div class="phase-content">
-              <span class="phase-tag">Phase 01</span>
-              <h3>Discovery</h3>
-              <p>We map your Azure infrastructure, Kubernetes clusters, GPU workloads, and current cost controls in one
-                focused conversation.</p>
+              <span class="phase-tag">Stage 01</span>
+              <h3>Visibility — Know What You Spend</h3>
+              <p>Deploy cost visibility tooling, tagging frameworks, and anomaly detection. Get a single source of truth
+                across every team.</p>
             </div>
             <div class="phase-connector">
               <div class="phase-number">01</div>
             </div>
-            <div class="phase-content phase-spacer" aria-hidden="true"></div>
+            <div class="phase-content phase-spacer"></div>
           </div>
-
           <div class="phase-item" data-aos="fade-left" data-aos-delay="150">
-            <div class="phase-content phase-spacer" aria-hidden="true"></div>
+            <div class="phase-content phase-spacer"></div>
             <div class="phase-connector">
               <div class="phase-number">02</div>
             </div>
             <div class="phase-content">
-              <span class="phase-tag">Phase 02</span>
-              <h3>Free 48-Hour Cost Assessment</h3>
-              <p>Our platform connects in read-only mode and runs a full scan. Within 48 hours, you receive a personalised
-                savings report with clear numbers.</p>
-              <span class="phase-highlight"><i class="bi bi-check-circle-fill"></i> Free · No commitment · Read-only
-                access</span>
+              <span class="phase-tag">Stage 02</span>
+              <h3>Analysis — Understand the Why</h3>
+              <p>Attribute waste to specific workloads. Benchmark against industry data. Identify the highest-ROI
+                opportunities.</p>
             </div>
           </div>
-
           <div class="phase-item" data-aos="fade-right" data-aos-delay="200">
             <div class="phase-content">
-              <span class="phase-tag">Phase 03</span>
-              <h3>Solution Presentation</h3>
-              <p>We present a savings roadmap with projected ROI, key risks, and a practical implementation plan for
-                your environment.</p>
+              <span class="phase-tag">Stage 03</span>
+              <h3>Manual Optimization</h3>
+              <p>Rightsizing, commitment purchases, storage tier changes, idle resource cleanup. Measurable savings
+                within 30 days.</p>
             </div>
             <div class="phase-connector">
               <div class="phase-number">03</div>
             </div>
-            <div class="phase-content phase-spacer" aria-hidden="true"></div>
+            <div class="phase-content phase-spacer"></div>
           </div>
-
           <div class="phase-item" data-aos="fade-left" data-aos-delay="250">
-            <div class="phase-content phase-spacer" aria-hidden="true"></div>
+            <div class="phase-content phase-spacer"></div>
             <div class="phase-connector">
               <div class="phase-number">04</div>
             </div>
             <div class="phase-content">
-              <span class="phase-tag">Phase 04</span>
-              <h3>2–4 Week Pilot</h3>
-              <p>Our optimization engine is deployed in your real environment so you can see actual savings before signing anything.
-                Most clients save 20%+ in the pilot.</p>
-              <span class="phase-highlight"><i class="bi bi-check-circle-fill"></i> Real savings before full
-                commitment</span>
+              <span class="phase-tag">Stage 04</span>
+              <h3>Automated Optimization</h3>
+              <p>Plug in autonomous container and infrastructure optimization engines. Savings run continuously without
+                manual intervention.</p>
+              <span class="phase-highlight"><i class="bi bi-check-circle-fill"></i> Where compounding savings
+                begin</span>
             </div>
           </div>
-
           <div class="phase-item" data-aos="fade-right" data-aos-delay="300">
             <div class="phase-content">
-              <span class="phase-tag">Phase 05</span>
-              <h3>Full Deployment</h3>
-              <p>Autonomous optimisation rolls out across your cloud estate, covering rightsizing, spot migration, and
-                cost governance without engineering tickets.</p>
+              <span class="phase-tag">Stage 05</span>
+              <h3>Autonomous &amp; Architectural</h3>
+              <p>Cost efficiency baked into architecture from day one: ARM compute, intelligent tiering, and
+                cloud-native patterns.</p>
             </div>
             <div class="phase-connector">
               <div class="phase-number">05</div>
             </div>
-            <div class="phase-content phase-spacer" aria-hidden="true"></div>
+            <div class="phase-content phase-spacer"></div>
           </div>
-
-          <div class="phase-item" data-aos="fade-left" data-aos-delay="350">
-            <div class="phase-content phase-spacer" aria-hidden="true"></div>
-            <div class="phase-connector">
-              <div class="phase-number">06</div>
-            </div>
-            <div class="phase-content">
-              <span class="phase-tag">Phase 06</span>
-              <h3>Ongoing Value</h3>
-              <p>As workloads change, we keep rightsizing, reporting savings, and supporting your team so efficiency
-                continues to improve over time.</p>
-              <span class="phase-highlight"><i class="bi bi-check-circle-fill"></i> Your savings grow over time,
-                automatically</span>
-            </div>
-          </div>
-
         </div>
       </div>
-    </section><!-- /6-Phase Engagement Journey -->
+    </section>
+
+    <!-- Scope Expansion -->
+    <section id="scope" class="section">
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Expanding FinOps Scope</span>
+        <h2>FinOps Is No Longer Just About Cloud</h2>
+        <p>FinOps teams now manage SaaS, licensing, data center, private cloud, and AI. Our framework is designed for
+          this multi-technology reality.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-card"
+              style="border-radius: 12px; padding: 30px; background: var(--surface-color); border: 1px solid var(--border2);">
+              <h3 style="color:var(--accent-color);font-weight:800; font-size: 2.2rem; margin-bottom: 5px;">98% <span
+                  style="font-size:0.8rem; color:var(--muted); font-weight: 500;">↑ +35% YoY</span></h3>
+              <h4 style="font-size:1.1rem;font-weight:700; color: var(--heading-color);">AI Spend</h4>
+              <p style="font-size:0.9rem;color:var(--muted);margin:0;">The fastest-growing scope category by far.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-card"
+              style="border-radius: 12px; padding: 30px; background: var(--surface-color); border: 1px solid var(--border2);">
+              <h3 style="color:var(--accent-color);font-weight:800; font-size: 2.2rem; margin-bottom: 5px;">90% <span
+                  style="font-size:0.8rem; color:var(--muted); font-weight: 500;">↑ +25% YoY</span></h3>
+              <h4 style="font-size:1.1rem;font-weight:700; color: var(--heading-color);">SaaS</h4>
+              <p style="font-size:0.9rem;color:var(--muted);margin:0;">Data platforms and AI tooling are actively
+                managed.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-card"
+              style="border-radius: 12px; padding: 30px; background: var(--surface-color); border: 1px solid var(--border2);">
+              <h3 style="color:var(--accent-color);font-weight:800; font-size: 2.2rem; margin-bottom: 5px;">64% <span
+                  style="font-size:0.8rem; color:var(--muted); font-weight: 500;">↑ +15% YoY</span></h3>
+              <h4 style="font-size:1.1rem;font-weight:700; color: var(--heading-color);">Licensing</h4>
+              <p style="font-size:0.9rem;color:var(--muted);margin:0;">Software licenses are absorbed into FinOps remit.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-card"
+              style="border-radius: 12px; padding: 30px; background: var(--surface-color); border: 1px solid var(--border2);">
+              <h3 style="color:var(--accent-color);font-weight:800; font-size: 2.2rem; margin-bottom: 5px;">57% <span
+                  style="font-size:0.8rem; color:var(--muted); font-weight: 500;">↑ +18% YoY</span></h3>
+              <h4 style="font-size:1.1rem;font-weight:700; color: var(--heading-color);">Private Cloud</h4>
+              <p style="font-size:0.9rem;color:var(--muted);margin:0;">Governing technology value — not just public
+                cloud bills.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-card"
+              style="border-radius: 12px; padding: 30px; background: var(--surface-color); border: 1px solid var(--border2);">
+              <h3 style="color:var(--accent-color);font-weight:800; font-size: 2.2rem; margin-bottom: 5px;">48% <span
+                  style="font-size:0.8rem; color:var(--muted); font-weight: 500;">↑ +12% YoY</span></h3>
+              <h4 style="font-size:1.1rem;font-weight:700; color: var(--heading-color);">Data Center</h4>
+              <p style="font-size:0.9rem;color:var(--muted);margin:0;">On-premises costs are now part of the FinOps
+                mandate.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-card"
+              style="border-radius: 12px; padding: 30px; background: var(--surface-color); border: 1px solid var(--border2);">
+              <h3 style="color:var(--accent-color);font-weight:800; font-size: 2.2rem; margin-bottom: 5px;">28% <span
+                  style="font-size:0.8rem; color:var(--muted); font-weight: 500;">↑ Emerging</span></h3>
+              <h4 style="font-size:1.1rem;font-weight:700; color: var(--heading-color);">Labor Costs</h4>
+              <p style="font-size:0.9rem;color:var(--muted);margin:0;">Evolution toward total technology cost
+                management.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Cloud Coverage -->
+    <section id="clouds" class="section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Platform Coverage</span>
+        <h2>One Framework. Every Major Public Cloud.</h2>
+        <p>Whether all-in on one provider or running multi-cloud, our framework applies consistently across
+          hyperscalers.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4 text-center">
+          <div class="col-lg-4">
+            <div class="feature-item p-4 h-100"
+              style="background: var(--surface-color); border: 1px solid var(--border2); border-radius: 12px;">
+              <h3
+                style="font-size: 1.1rem; font-weight: 700; color: var(--accent-color); margin-bottom: 15px; padding: 8px 16px; background: rgba(0, 120, 215, 0.1); border-radius: 8px; display: inline-block;">
+                Hyperscaler — Americas</h3>
+              <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">Full coverage across compute,
+                storage, containers, serverless, and managed services. Visibility, governance, rightsizing, savings
+                commitments, and architectural optimization.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="feature-item p-4 h-100"
+              style="background: var(--surface-color); border: 1px solid var(--border2); border-radius: 12px;">
+              <h3
+                style="font-size: 1.1rem; font-weight: 700; color: var(--accent-color); margin-bottom: 15px; padding: 8px 16px; background: rgba(0, 120, 215, 0.1); border-radius: 8px; display: inline-block;">
+                Hyperscaler — Europe &amp; Enterprise</h3>
+              <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">VM rightsizing, container
+                optimization, reservations, hybrid licensing strategy, and governance across large enterprise cloud
+                estates.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="feature-item p-4 h-100"
+              style="background: var(--surface-color); border: 1px solid var(--border2); border-radius: 12px;">
+              <h3
+                style="font-size: 1.1rem; font-weight: 700; color: var(--accent-color); margin-bottom: 15px; padding: 8px 16px; background: rgba(0, 120, 215, 0.1); border-radius: 8px; display: inline-block;">
+                Hyperscaler — Asia Pacific</h3>
+              <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">Committed use discounts, spot VM
+                orchestration, managed container cost modeling, data service governance, and recommender-driven
+                rightsizing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Cloud Efficiency Scorecard -->
-    <section id="scorecard" class="scorecard-section section">
-
-
+    <section id="scorecard" class="scorecard-section section light-background">
       <div class="container section-title" data-aos="fade-up">
         <span class="subtitle">Free Assessment</span>
-        <h2>Get Your Cloud Efficiency Scorecard</h2>
-        <p>Answer four quick questions and receive a personalised Azure savings report within 48 hours, free of charge.</p>
+        <h2>Your Cloud Bill Is Too High.<br>We Can Prove It — Free.</h2>
+        <p>Answer four quick questions and receive a personalised Azure savings report within 48 hours, free of charge.
+          We identify waste, quantify savings, and hand you a clear optimization roadmap.</p>
       </div>
       <div class="container">
         <div class="row align-items-start">
-
-          <!-- Left: Why take the scorecard -->
           <div class="col-lg-5 scorecard-left" data-aos="fade-right">
             <div class="value-item">
               <div class="v-icon"><i class="bi bi-graph-down-arrow"></i></div>
@@ -684,27 +856,30 @@
             </div>
           </div>
 
-          <!-- Right: Scorecard Form -->
           <div class="col-lg-7" data-aos="fade-left">
-            <div class="scorecard-card">
-
-              <!-- Progress Bar -->
+            <div class="scorecard-card"
+              style="background: var(--surface-color); border: 1px solid var(--border2); border-radius: 20px; box-shadow: 0 20px 60px color-mix(in srgb, var(--accent-color), transparent 95%); padding: 40px;">
               <div class="scorecard-progress">
                 <div class="progress-header">
                   <span class="progress-label" id="progress-label">Step 1 of 4</span>
                   <span class="progress-label" id="progress-pct">25%</span>
                 </div>
-                <div class="progress-track">
-                  <div class="progress-fill" id="progress-fill"></div>
+                <div class="progress-track"
+                  style="height: 6px; background: color-mix(in srgb, var(--default-color), transparent 88%); border-radius: 10px; overflow: hidden;">
+                  <div class="progress-fill" id="progress-fill"
+                    style="width: 25%; height: 100%; background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), white 20%)); border-radius: 10px; transition: width 0.4s ease;">
+                  </div>
                 </div>
               </div>
 
-              <!-- Step 1: Cloud Spend -->
+              <!-- Step 1 -->
               <div class="scorecard-step active" id="step-1">
-                <h3>What is your monthly Azure / cloud spend?</h3>
-                <p class="step-subtitle">This helps us size the opportunity and prioritise the right optimisations for
-                  you.</p>
-                <div class="option-group two-col">
+                <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--heading-color); margin-bottom: 6px;">What
+                  is your monthly Azure / cloud spend?</h3>
+                <p class="step-subtitle" style="font-size: 0.9rem; color: var(--muted); margin-bottom: 24px;">This helps
+                  us size the opportunity and prioritise the right optimisations for you.</p>
+                <div class="option-group two-col"
+                  style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
                   <button class="option-btn" data-step="1" data-value="under-10k"><span class="opt-icon">💰</span> Under
                     $10k/mo</button>
                   <button class="option-btn" data-step="1" data-value="10k-50k"><span class="opt-icon">💳</span> $10k –
@@ -714,17 +889,22 @@
                   <button class="option-btn" data-step="1" data-value="200k-plus"><span class="opt-icon">🏢</span>
                     $200k+/mo</button>
                 </div>
-                <div class="scorecard-nav">
-                  <button class="sc-btn-next" id="next-1">Next <i class="bi bi-arrow-right"></i></button>
+                <div class="scorecard-nav"
+                  style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+                  <button class="sc-btn-next" id="next-1"
+                    style="background: var(--accent-color); color: white; padding: 12px 24px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s;">Next
+                    <i class="bi bi-arrow-right"></i></button>
                 </div>
               </div>
 
-              <!-- Step 2: Kubernetes -->
-              <div class="scorecard-step" id="step-2">
-                <h3>Are you running Kubernetes workloads?</h3>
-                <p class="step-subtitle">Kubernetes clusters often hide the biggest waste, with large amounts of
-                  provisioned capacity sitting idle.</p>
-                <div class="option-group">
+              <!-- Step 2 -->
+              <div class="scorecard-step" id="step-2" style="display: none;">
+                <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--heading-color); margin-bottom: 6px;">Are
+                  you running Kubernetes workloads?</h3>
+                <p class="step-subtitle" style="font-size: 0.9rem; color: var(--muted); margin-bottom: 24px;">Kubernetes
+                  clusters often hide the biggest waste.</p>
+                <div class="option-group"
+                  style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
                   <button class="option-btn" data-step="2" data-value="k8s-prod"><span class="opt-icon">✅</span> Yes, in
                     production</button>
                   <button class="option-btn" data-step="2" data-value="k8s-exp"><span class="opt-icon">🧪</span> Yes,
@@ -732,36 +912,49 @@
                   <button class="option-btn" data-step="2" data-value="k8s-no"><span class="opt-icon">❌</span> No, not
                     yet</button>
                 </div>
-                <div class="scorecard-nav">
-                  <button class="sc-btn-back" id="back-2">← Back</button>
-                  <button class="sc-btn-next" id="next-2">Next <i class="bi bi-arrow-right"></i></button>
+                <div class="scorecard-nav"
+                  style="display: flex; justify-content: space-between; gap: 10px; margin-top: 20px;">
+                  <button class="sc-btn-back" id="back-2"
+                    style="background: transparent; color: var(--default-color); border: 2px solid var(--border2); padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">←
+                    Back</button>
+                  <button class="sc-btn-next" id="next-2"
+                    style="background: var(--accent-color); color: white; padding: 12px 24px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Next
+                    <i class="bi bi-arrow-right"></i></button>
                 </div>
               </div>
 
-              <!-- Step 3: AI/ML Workloads -->
-              <div class="scorecard-step" id="step-3">
-                <h3>Do you run AI / ML or GPU workloads on Azure?</h3>
-                <p class="step-subtitle">GPU compute, especially H200 and A100 instances, is one of the fastest-growing
-                  cloud cost drivers in 2026.</p>
-                <div class="option-group">
+              <!-- Step 3 -->
+              <div class="scorecard-step" id="step-3" style="display: none;">
+                <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--heading-color); margin-bottom: 6px;">Do you
+                  run AI / ML or GPU workloads on Azure?</h3>
+                <p class="step-subtitle" style="font-size: 0.9rem; color: var(--muted); margin-bottom: 24px;">GPU
+                  compute is one of the fastest-growing cloud cost drivers.</p>
+                <div class="option-group"
+                  style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
                   <button class="option-btn" data-step="3" data-value="ai-scale"><span class="opt-icon">🤖</span> Yes,
-                    at scale (training / inference)</button>
+                    at scale</button>
                   <button class="option-btn" data-step="3" data-value="ai-occ"><span class="opt-icon">🔬</span> Yes,
-                    occasionally / experimenting</button>
+                    occasionally</button>
                   <button class="option-btn" data-step="3" data-value="ai-no"><span class="opt-icon">📊</span> No,
                     standard compute only</button>
                 </div>
-                <div class="scorecard-nav">
-                  <button class="sc-btn-back" id="back-3">← Back</button>
-                  <button class="sc-btn-next" id="next-3">Next <i class="bi bi-arrow-right"></i></button>
+                <div class="scorecard-nav"
+                  style="display: flex; justify-content: space-between; gap: 10px; margin-top: 20px;">
+                  <button class="sc-btn-back" id="back-3"
+                    style="background: transparent; color: var(--default-color); border: 2px solid var(--border2); padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">←
+                    Back</button>
+                  <button class="sc-btn-next" id="next-3"
+                    style="background: var(--accent-color); color: white; padding: 12px 24px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Next
+                    <i class="bi bi-arrow-right"></i></button>
                 </div>
               </div>
 
-              <!-- Step 4: Contact Details -->
-              <div class="scorecard-step" id="step-4">
-                <h3>Where should we send your savings report?</h3>
-                <p class="step-subtitle">We'll analyse your environment and send your personalised report within 48
-                  hours.</p>
+              <!-- Step 4 -->
+              <div class="scorecard-step" id="step-4" style="display: none;">
+                <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--heading-color); margin-bottom: 6px;">Where
+                  should we send your savings report?</h3>
+                <p class="step-subtitle" style="font-size: 0.9rem; color: var(--muted); margin-bottom: 24px;">We'll
+                  analyse your environment and send your report within 48 hours.</p>
                 <form id="scorecard-form" action="https://formspree.io/f/mqawzgyq" method="POST">
                   <input type="hidden" name="_subject" value="New Cloud Efficiency Scorecard Request">
                   <input type="hidden" name="_captcha" value="false">
@@ -769,48 +962,61 @@
                   <input type="hidden" name="cloud_spend" id="sc-spend">
                   <input type="hidden" name="kubernetes" id="sc-k8s">
                   <input type="hidden" name="ai_ml_workloads" id="sc-ai">
-                  <div class="sc-form-group">
-                    <label>Full Name</label>
-                    <input type="text" name="name" placeholder="Jane Smith" required>
+                  <div class="sc-form-group" style="margin-bottom: 18px;">
+                    <label
+                      style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--heading-color); margin-bottom: 7px;">Full
+                      Name</label>
+                    <input type="text" name="name" placeholder="Jane Smith" required
+                      style="width: 100%; padding: 13px 16px; border: 2px solid var(--border2); border-radius: 10px; background: var(--surface-color); color: var(--default-color); outline: none;">
                   </div>
-                  <div class="sc-form-group">
-                    <label>Work Email</label>
-                    <input type="email" name="email" placeholder="jane@company.com" required>
+                  <div class="sc-form-group" style="margin-bottom: 18px;">
+                    <label
+                      style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--heading-color); margin-bottom: 7px;">Work
+                      Email</label>
+                    <input type="email" name="email" placeholder="jane@company.com" required
+                      style="width: 100%; padding: 13px 16px; border: 2px solid var(--border2); border-radius: 10px; background: var(--surface-color); color: var(--default-color); outline: none;">
                   </div>
-                  <div class="sc-form-group">
-                    <label>Company</label>
-                    <input type="text" name="company" placeholder="Acme Corp" required>
+                  <div class="sc-form-group" style="margin-bottom: 18px;">
+                    <label
+                      style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--heading-color); margin-bottom: 7px;">Company</label>
+                    <input type="text" name="company" placeholder="Acme Corp" required
+                      style="width: 100%; padding: 13px 16px; border: 2px solid var(--border2); border-radius: 10px; background: var(--surface-color); color: var(--default-color); outline: none;">
                   </div>
-                  <div class="sc-form-group">
-                    <label>Phone <span class="optional-tag">(optional)</span></label>
-                    <input type="tel" name="phone" placeholder="+91 98765 43210">
+                  <div class="sc-form-group" style="margin-bottom: 18px;">
+                    <label
+                      style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--heading-color); margin-bottom: 7px;">Phone
+                      <span class="optional-tag"
+                        style="font-weight: 400; color: var(--muted);">(optional)</span></label>
+                    <input type="tel" name="phone" placeholder="+91 98765 43210"
+                      style="width: 100%; padding: 13px 16px; border: 2px solid var(--border2); border-radius: 10px; background: var(--surface-color); color: var(--default-color); outline: none;">
                   </div>
-                  <div class="scorecard-nav">
-                    <button type="button" class="sc-btn-back" id="back-4">← Back</button>
-                    <button type="submit" class="sc-btn-next">Get My Free Assessment <i
-                        class="bi bi-arrow-right"></i></button>
+                  <div class="scorecard-nav"
+                    style="display: flex; justify-content: space-between; gap: 10px; margin-top: 20px;">
+                    <button type="button" class="sc-btn-back" id="back-4"
+                      style="background: transparent; color: var(--default-color); border: 2px solid var(--border2); padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">←
+                      Back</button>
+                    <button type="submit" class="sc-btn-next"
+                      style="background: var(--accent-color); color: white; padding: 12px 24px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Get
+                      My Free Assessment <i class="bi bi-arrow-right"></i></button>
                   </div>
                 </form>
               </div>
 
               <!-- Success State -->
-              <div class="scorecard-success" id="scorecard-success">
-                <div class="success-icon"><i class="bi bi-check-circle-fill"></i></div>
-                <h3>You're on the list! 🎉</h3>
-                <p>We'll analyse your Azure environment and send your personalised savings report within
-                  <strong>48 hours</strong>.</p>
-                <div class="success-timer"><i class="bi bi-clock"></i> Expected in 48 hours or less</div>
+              <div class="scorecard-success" id="scorecard-success"
+                style="display: none; text-align: center; padding: 40px 20px;">
+                <div class="success-icon" style="font-size: 4rem; color: #10B981; margin-bottom: 20px;"><i
+                    class="bi bi-check-circle-fill"></i></div>
+                <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--heading-color); margin-bottom: 15px;">
+                  You're on the list! 🎉</h3>
+                <p style="color: var(--muted); margin-bottom: 25px;">We'll analyse your environment and send your report
+                  within <strong>48 hours</strong>.</p>
               </div>
-
-              <p class="scorecard-privacy"><i class="bi bi-lock-fill"></i> Your data is secure. We never share or sell
-                your information.</p>
-
             </div>
           </div>
         </div>
       </div>
-
-    </section><!-- /Cloud Efficiency Scorecard -->
+    </section>
 
   </main>
 
@@ -825,7 +1031,8 @@
             <img src="assets/img/logo.webp" alt="MeghTree Technologies Logo">
             <span class="sitename">MeghTree Technologies</span>
           </a>
-          <p class="footer-desc">Bangalore-based Microsoft Azure specialists helping enterprises cut cloud costs by 30–60% through autonomous FinOps and Kubernetes optimization.</p>
+          <p class="footer-desc">Bangalore-based Microsoft Azure specialists helping enterprises cut cloud costs by
+            30–60% through autonomous FinOps and Kubernetes optimization.</p>
         </div>
 
         <!-- Navigate -->
@@ -833,9 +1040,12 @@
           <h4>Navigate</h4>
           <ul>
             <li><a href="#hero">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#why-us">Why Us</a></li>
-            <li><a href="#journey">Process</a></li>
+            <li><a href="#problem">The Problem</a></li>
+            <li><a href="#framework">Framework</a></li>
+            <li><a href="#ai">AI FinOps</a></li>
+            <li><a href="#scope">Scope</a></li>
+            <li><a href="#clouds">Coverage</a></li>
+            <li><a href="#clouds">Coverage</a></li>
             <li><a href="#scorecard">Get Assessment</a></li>
           </ul>
         </div>
@@ -844,7 +1054,8 @@
         <div class="col-lg-3 col-6 footer-links">
           <h4>Connect</h4>
           <ul>
-            <li><a href="https://www.linkedin.com/company/meghtree-technologies" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/company/meghtree-technologies" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="mailto:info@meghtree.co.in">info@meghtree.co.in</a></li>
             <li><a href="mailto:sales@meghtree.co.in">sales@meghtree.co.in</a></li>
           </ul>
@@ -884,7 +1095,8 @@
   <div id="cookie-banner" class="cookie-banner">
     <div class="cookie-inner">
       <div class="cookie-text">
-        <p>We use essential cookies to ensure our website functions properly. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a> and use of cookies.</p>
+        <p>We use essential cookies to ensure our website functions properly. By continuing, you agree to our <a
+            href="privacy.html">Privacy Policy</a> and use of cookies.</p>
       </div>
       <div class="cookie-actions">
         <button id="cookie-decline" class="cookie-btn-decline">Decline</button>
