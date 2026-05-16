@@ -3151,19 +3151,42 @@ section,
 }
 
 .methodology-content .service-icon {
-  width: 48px;
-  height: 48px;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  /* Removed width, height, background, and border-radius to eliminate the box/border */
 }
 
 .methodology-content .service-icon i {
-  font-size: 24px;
-  color: var(--accent-color);
+  font-size: 80px; /* Big floating icon */
+  color: color-mix(in srgb, var(--accent-color), transparent 20%); /* Slightly faded to not overpower text */
+  line-height: 1;
+}
+
+.tracking-eye {
+  display: inline-block !important;
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+}
+
+/* Triggers animation when hovering the container card */
+.methodology-content:hover .tracking-eye {
+  animation: irisFocus 0.8s ease-in-out forwards;
+}
+
+@keyframes irisFocus {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(0.85) rotate(-20deg);
+  }
+  70% {
+    transform: scale(1.15) rotate(15deg);
+  }
+  100% {
+    transform: scale(1.05) rotate(0deg);
+  }
 }
 
 .methodology-content h3 {
@@ -3225,5 +3248,91 @@ section,
   }
   .methodology-content {
     padding: 25px;
+  }
+}
+
+/*--------------------------------------------------------------
+# AI FinOps Master-Detail Accordion
+--------------------------------------------------------------*/
+.ai-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ai-accordion-item {
+  border-left: 4px solid transparent;
+  padding-left: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ai-accordion-item:hover .ai-accordion-header {
+  color: var(--accent-color);
+}
+
+.ai-accordion-item.active {
+  border-left-color: var(--accent-color);
+}
+
+.ai-accordion-header {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin: 0;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.ai-accordion-item.active .ai-accordion-header {
+  color: var(--accent-color);
+}
+
+/* Hide description text initially */
+.ai-accordion-desc {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-out;
+}
+
+.ai-accordion-desc-inner {
+  overflow: hidden;
+}
+
+.ai-accordion-item.active .ai-accordion-desc {
+  grid-template-rows: 1fr;
+}
+
+/* Right Column Visuals Stack */
+.ai-visuals-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+}
+
+.ai-visual-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.ai-visual-item.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .ai-accordion-container {
+    flex-direction: column-reverse;
+  }
+  .ai-visuals-wrapper {
+    margin-bottom: 30px;
   }
 }

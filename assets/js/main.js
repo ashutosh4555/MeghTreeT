@@ -321,4 +321,36 @@
     });
   })();
 
+  /**
+   * AI FinOps Master-Detail Accordion
+   */
+  (function initAIAccordion() {
+    const accordionItems = document.querySelectorAll('.ai-accordion-item');
+
+    if (accordionItems.length === 0) return;
+
+    accordionItems.forEach(item => {
+      item.querySelector('.ai-accordion-header').addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Find the specific container for this accordion
+        const container = item.closest('.ai-accordion-container');
+        if (!container) return;
+
+        const containerAccordions = container.querySelectorAll('.ai-accordion-item');
+        const containerVisuals = container.querySelectorAll('.ai-visual-item');
+
+        // Remove active from all within THIS container only
+        containerAccordions.forEach(el => el.classList.remove('active'));
+        containerVisuals.forEach(el => el.classList.remove('active'));
+
+        // Add active to clicked item
+        item.classList.add('active');
+        const targetId = item.dataset.target;
+        const targetVisual = document.getElementById(targetId);
+        if (targetVisual) targetVisual.classList.add('active');
+      });
+    });
+  })();
+
 })();
