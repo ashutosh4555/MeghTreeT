@@ -3260,19 +3260,28 @@ section,
   gap: 15px;
 }
 
+.ai-accordion-list {
+  position: relative;
+}
+
+.ai-active-indicator {
+  position: absolute;
+  left: 0;
+  width: 4px;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  transition: top 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), height 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 1;
+}
+
 .ai-accordion-item {
-  border-left: 4px solid transparent;
-  padding-left: 15px;
+  padding-left: 19px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .ai-accordion-item:hover .ai-accordion-header {
   color: var(--accent-color);
-}
-
-.ai-accordion-item.active {
-  border-left-color: var(--accent-color);
 }
 
 .ai-accordion-header {
@@ -3339,9 +3348,10 @@ section,
 
 /* ── AI Visual Card ── */
 .visual-card {
-  background: color-mix(in srgb, var(--surface-color), transparent 50%) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

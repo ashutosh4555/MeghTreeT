@@ -1,5 +1,5 @@
 /**
-* MeghTree Technologies
+* Meghtree Technologies
 * Main JavaScript — cleaned & consolidated
 */
 
@@ -322,34 +322,110 @@
   })();
 
   /**
-   * AI FinOps Master-Detail Accordion
+   * AI FinOps & Our Methodology Master-Detail Accordion with Sticky Scroll
    */
   (function initAIAccordion() {
-    const accordionItems = document.querySelectorAll('.ai-accordion-item');
+    const containers = document.querySelectorAll('.ai-accordion-container');
+    if (containers.length === 0) return;
 
-    if (accordionItems.length === 0) return;
+    // Apply scroll-spy on desktop devices
+    const isDesktop = window.matchMedia('(min-width: 992px)').matches;
 
-    accordionItems.forEach(item => {
-      item.querySelector('.ai-accordion-header').addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Find the specific container for this accordion
-        const container = item.closest('.ai-accordion-container');
-        if (!container) return;
+    containers.forEach(container => {
+      const list = container.querySelector('.ai-accordion-list');
+      const items = container.querySelectorAll('.ai-accordion-item');
+      if (!list || items.length === 0) return;
 
-        const containerAccordions = container.querySelectorAll('.ai-accordion-item');
-        const containerVisuals = container.querySelectorAll('.ai-visual-item');
+      // Elastic Active Indicator Logic
+      const indicator = document.createElement('div');
+      indicator.className = 'ai-active-indicator';
+      list.appendChild(indicator);
 
-        // Remove active from all within THIS container only
-        containerAccordions.forEach(el => el.classList.remove('active'));
-        containerVisuals.forEach(el => el.classList.remove('active'));
+      function updateIndicator() {
+        const activeItem = list.querySelector('.ai-accordion-item.active');
+        if (activeItem) {
+          indicator.style.top = activeItem.offsetTop + 'px';
+          indicator.style.height = activeItem.offsetHeight + 'px';
+        }
+      }
 
-        // Add active to clicked item
-        item.classList.add('active');
-        const targetId = item.dataset.target;
-        const targetVisual = document.getElementById(targetId);
-        if (targetVisual) targetVisual.classList.add('active');
+      // Observe items for height changes (especially for AI FinOps expanding descriptions)
+      const resizeObserver = new ResizeObserver(() => {
+        updateIndicator();
       });
+      items.forEach(item => resizeObserver.observe(item));
+
+      // 1. Click Handling (Mobile & Desktop)
+      items.forEach(item => {
+        const header = item.querySelector('.ai-accordion-header');
+        if (header) {
+          header.addEventListener('click', function(e) {
+            e.preventDefault();
+            const containerAccordions = container.querySelectorAll('.ai-accordion-item');
+            const containerVisuals = container.querySelectorAll('.ai-visual-item');
+            
+            containerAccordions.forEach(el => el.classList.remove('active'));
+            containerVisuals.forEach(el => el.classList.remove('active'));
+            
+            item.classList.add('active');
+            const targetId = item.dataset.target;
+            const targetVisual = document.getElementById(targetId);
+            if (targetVisual) targetVisual.classList.add('active');
+            
+            updateIndicator(); // Manually update on click
+          });
+        }
+      });
+
+      // 2. Sticky Scroll Logic (Desktop Only)
+      if (isDesktop) {
+        const numItems = items.length;
+        const scrollHeight = (numItems * 75) + 'vh'; // 75vh per item
+        
+        container.style.position = 'sticky';
+        container.style.top = '12vh';
+        container.style.zIndex = '10';
+
+        const parent = container.parentElement;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'sticky-scroll-wrapper';
+        wrapper.style.height = scrollHeight;
+        wrapper.style.position = 'relative';
+        
+        parent.insertBefore(wrapper, container);
+        wrapper.appendChild(container);
+
+        window.addEventListener('scroll', () => {
+          const rect = wrapper.getBoundingClientRect();
+          const topOffset = window.innerHeight * 0.12;
+          
+          if (rect.top <= topOffset && rect.bottom >= window.innerHeight) {
+            const scrollDistance = topOffset - rect.top;
+            const scrollableDistance = rect.height - window.innerHeight;
+            let scrollProgress = scrollDistance / scrollableDistance;
+            
+            let activeIndex = Math.floor(scrollProgress * numItems);
+            
+            if (activeIndex < 0) activeIndex = 0;
+            if (activeIndex >= numItems) activeIndex = numItems - 1;
+            
+            const targetItem = items[activeIndex];
+            if (!targetItem.classList.contains('active')) {
+              container.querySelectorAll('.ai-accordion-item').forEach(el => el.classList.remove('active'));
+              container.querySelectorAll('.ai-visual-item').forEach(el => el.classList.remove('active'));
+              
+              targetItem.classList.add('active');
+              const targetVisual = document.getElementById(targetItem.dataset.target);
+              if (targetVisual) targetVisual.classList.add('active');
+              
+              updateIndicator();
+            }
+          }
+        });
+      }
+      
+      // Initialize indicator immediately
+      setTimeout(updateIndicator, 100);
     });
   })();
 
