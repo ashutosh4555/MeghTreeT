@@ -1,5 +1,5 @@
 /**
-* MeghTree Technologies
+* Meghtree Technologies
 * Main Stylesheet
 */
 
@@ -11,7 +11,10 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --default-font:
+    "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Montserrat", sans-serif;
   --nav-font: "Poppins", sans-serif;
 }
@@ -24,7 +27,7 @@
   /* Default color used for the majority of the text content across the entire website */
   --heading-color: #000000;
   /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #0078D7;
+  --accent-color: #0078d7;
   /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff;
   /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -127,7 +130,8 @@ h6 {
 .scrolled .header {
   padding: 10px 0;
   isolation: isolate;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .scrolled .header .logo img {
@@ -197,7 +201,7 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -217,7 +221,6 @@ h6 {
     background: #0062b1 !important;
     color: #fff !important;
   }
-
 
   .navmenu .dropdown ul {
     margin: 0;
@@ -252,11 +255,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -268,7 +271,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -385,7 +388,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -412,7 +415,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
 }
@@ -644,7 +647,8 @@ h6 {
 .page-title {
   text-align: center;
   padding: 40px 0 20px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .page-title .breadcrumbs {
@@ -682,7 +686,11 @@ h6 {
   margin-right: 0.2rem;
 }
 
-.page-title .breadcrumbs .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+.page-title
+  .breadcrumbs
+  .breadcrumb
+  .breadcrumb-item
+  + .breadcrumb-item::before {
   color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
@@ -735,7 +743,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
@@ -851,13 +858,15 @@ section,
   text-decoration: none;
   transition: all 0.3s ease;
   border: none;
-  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 80%);
+  box-shadow: 0 4px 15px
+    color-mix(in srgb, var(--accent-color), transparent 80%);
 }
 
 .hero .hero-cta .btn-primary:hover {
   background-color: color-mix(in srgb, var(--accent-color), black 10%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 8px 25px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .hero .hero-cta .btn-secondary {
@@ -917,7 +926,8 @@ section,
 
 .hero .hero-image img {
   border-radius: 12px;
-  box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 20px 60px
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .hero .hero-image .floating-card {
@@ -927,7 +937,8 @@ section,
   background: var(--surface-color);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 10px 40px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 10px 40px
+    color-mix(in srgb, var(--default-color), transparent 85%);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -993,7 +1004,11 @@ section,
 # Services Section
 --------------------------------------------------------------*/
 .services {
-  background-color: color-mix(in srgb, var(--background-color), var(--accent-color) 2%);
+  background-color: color-mix(
+    in srgb,
+    var(--background-color),
+    var(--accent-color) 2%
+  );
 }
 
 .services .service-item {
@@ -1017,7 +1032,11 @@ section,
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 30%));
+  background: linear-gradient(
+    90deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), var(--heading-color) 30%)
+  );
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease-in-out;
@@ -1048,7 +1067,11 @@ section,
 .services .service-item .service-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), var(--heading-color) 20%)
+  );
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1162,7 +1185,8 @@ section,
 
 .why-us .image-wrapper img {
   border-radius: 8px;
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 20px 40px
+    color-mix(in srgb, var(--default-color), transparent 85%);
   transition: transform 0.4s ease-in-out;
 }
 
@@ -1199,7 +1223,11 @@ section,
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 30%));
+  background: linear-gradient(
+    90deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), var(--heading-color) 30%)
+  );
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease-in-out;
@@ -1427,7 +1455,11 @@ section,
   }
 }
 
-.terms-of-service .tos-content .content-section .prohibited-list .prohibited-item {
+.terms-of-service
+  .tos-content
+  .content-section
+  .prohibited-list
+  .prohibited-item {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1436,12 +1468,22 @@ section,
   border-radius: 12px;
 }
 
-.terms-of-service .tos-content .content-section .prohibited-list .prohibited-item i {
+.terms-of-service
+  .tos-content
+  .content-section
+  .prohibited-list
+  .prohibited-item
+  i {
   color: #dc3545;
   font-size: 1.2rem;
 }
 
-.terms-of-service .tos-content .content-section .prohibited-list .prohibited-item span {
+.terms-of-service
+  .tos-content
+  .content-section
+  .prohibited-list
+  .prohibited-item
+  span {
   font-size: 0.95rem;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
@@ -1472,7 +1514,12 @@ section,
   font-size: 0.95rem;
 }
 
-.terms-of-service .tos-content .content-section .disclaimer-box ul li:last-child {
+.terms-of-service
+  .tos-content
+  .content-section
+  .disclaimer-box
+  ul
+  li:last-child {
   margin-bottom: 0;
 }
 
@@ -1509,7 +1556,11 @@ section,
 }
 
 .terms-of-service .tos-contact .contact-box {
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 0%, color-mix(in srgb, var(--accent-color), transparent 98%) 100%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-color), transparent 95%) 0%,
+    color-mix(in srgb, var(--accent-color), transparent 98%) 100%
+  );
   border-radius: 20px;
   padding: 40px;
   display: flex;
@@ -1567,7 +1618,11 @@ section,
   transition: all 0.3s;
 }
 
-.terms-of-service .tos-contact .contact-box .contact-content .contact-link:hover {
+.terms-of-service
+  .tos-contact
+  .contact-box
+  .contact-content
+  .contact-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -1669,7 +1724,11 @@ section,
 }
 
 .privacy .privacy-content .privacy-section .highlight-box {
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000000 20%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), #000000 20%)
+  );
   padding: 40px;
   border-radius: 15px;
   text-align: center;
@@ -1707,7 +1766,11 @@ section,
   transition: all 0.3s ease;
 }
 
-.privacy .privacy-content .privacy-section .security-measures .measure-item:hover {
+.privacy
+  .privacy-content
+  .privacy-section
+  .security-measures
+  .measure-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -1783,28 +1846,61 @@ section,
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.privacy .privacy-content .privacy-section .cookie-types .table-responsive .table {
+.privacy
+  .privacy-content
+  .privacy-section
+  .cookie-types
+  .table-responsive
+  .table {
   margin: 0;
 }
 
-.privacy .privacy-content .privacy-section .cookie-types .table-responsive .table thead {
+.privacy
+  .privacy-content
+  .privacy-section
+  .cookie-types
+  .table-responsive
+  .table
+  thead {
   background: color-mix(in srgb, var(--accent-color), transparent 90%);
 }
 
-.privacy .privacy-content .privacy-section .cookie-types .table-responsive .table thead th {
+.privacy
+  .privacy-content
+  .privacy-section
+  .cookie-types
+  .table-responsive
+  .table
+  thead
+  th {
   border: none;
   color: var(--heading-color);
   font-weight: 600;
   padding: 15px 20px;
 }
 
-.privacy .privacy-content .privacy-section .cookie-types .table-responsive .table tbody td {
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+.privacy
+  .privacy-content
+  .privacy-section
+  .cookie-types
+  .table-responsive
+  .table
+  tbody
+  td {
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
   padding: 15px 20px;
   color: var(--default-color);
 }
 
-.privacy .privacy-content .privacy-section .cookie-types .table-responsive .table tbody tr:hover {
+.privacy
+  .privacy-content
+  .privacy-section
+  .cookie-types
+  .table-responsive
+  .table
+  tbody
+  tr:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 97%);
 }
 
@@ -1858,7 +1954,7 @@ section,
     font-size: 20px;
   }
 
-  .privacy .privacy-content .privacy-section .security-measures .row>div {
+  .privacy .privacy-content .privacy-section .security-measures .row > div {
     margin-bottom: 20px;
   }
 
@@ -1881,7 +1977,11 @@ section,
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--surface-color) 0%, color-mix(in srgb, var(--surface-color), var(--accent-color) 3%) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--surface-color) 0%,
+    color-mix(in srgb, var(--surface-color), var(--accent-color) 3%) 100%
+  );
 }
 
 .error-404 .error-content {
@@ -1971,7 +2071,8 @@ section,
 .error-404 .error-content .error-actions .btn-primary:hover {
   background-color: color-mix(in srgb, var(--accent-color), black 10%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 8px 25px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .error-404 .error-content .error-actions .btn-secondary {
@@ -2026,7 +2127,12 @@ section,
   align-items: center;
 }
 
-.error-404 .error-content .search-section .search-form .search-input-group .search-input {
+.error-404
+  .error-content
+  .search-section
+  .search-form
+  .search-input-group
+  .search-input {
   width: 100%;
   padding: 16px 60px 16px 20px;
   border: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
@@ -2037,17 +2143,32 @@ section,
   transition: all 0.3s ease;
 }
 
-.error-404 .error-content .search-section .search-form .search-input-group .search-input:focus {
+.error-404
+  .error-content
+  .search-section
+  .search-form
+  .search-input-group
+  .search-input:focus {
   outline: none;
   border-color: var(--accent-color);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
-.error-404 .error-content .search-section .search-form .search-input-group .search-input::placeholder {
+.error-404
+  .error-content
+  .search-section
+  .search-form
+  .search-input-group
+  .search-input::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
-.error-404 .error-content .search-section .search-form .search-input-group .search-btn {
+.error-404
+  .error-content
+  .search-section
+  .search-form
+  .search-input-group
+  .search-btn {
   position: absolute;
   right: 8px;
   background: var(--accent-color);
@@ -2059,11 +2180,22 @@ section,
   transition: all 0.3s ease;
 }
 
-.error-404 .error-content .search-section .search-form .search-input-group .search-btn:hover {
+.error-404
+  .error-content
+  .search-section
+  .search-form
+  .search-input-group
+  .search-btn:hover {
   background-color: color-mix(in srgb, var(--accent-color), black 10%);
 }
 
-.error-404 .error-content .search-section .search-form .search-input-group .search-btn i {
+.error-404
+  .error-content
+  .search-section
+  .search-form
+  .search-input-group
+  .search-btn
+  i {
   font-size: 1rem;
 }
 
@@ -2098,7 +2230,11 @@ section,
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), black 20%) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--accent-color) 0%,
+    color-mix(in srgb, var(--accent-color), black 20%) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2152,7 +2288,8 @@ section,
 
 .error-404 .helpful-links .link-item:hover .link-icon {
   transform: scale(1.1);
-  box-shadow: 0 15px 35px color-mix(in srgb, var(--accent-color), transparent 65%);
+  box-shadow: 0 15px 35px
+    color-mix(in srgb, var(--accent-color), transparent 65%);
 }
 
 @media (max-width: 992px) {
@@ -2194,8 +2331,17 @@ section,
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 20% 50%, color-mix(in srgb, var(--accent-color), transparent 92%) 0%, transparent 60%),
-    radial-gradient(circle at 80% 50%, color-mix(in srgb, var(--accent-color), transparent 94%) 0%, transparent 60%);
+  background-image:
+    radial-gradient(
+      circle at 20% 50%,
+      color-mix(in srgb, var(--accent-color), transparent 92%) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      color-mix(in srgb, var(--accent-color), transparent 94%) 0%,
+      transparent 60%
+    );
   pointer-events: none;
 }
 
@@ -2243,7 +2389,8 @@ section,
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent-color), transparent 92%);
+  box-shadow: 0 4px 20px
+    color-mix(in srgb, var(--accent-color), transparent 92%);
 }
 
 .market-reality .stat-card::before {
@@ -2253,7 +2400,11 @@ section,
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), white 35%));
+  background: linear-gradient(
+    90deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), white 35%)
+  );
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease-in-out;
@@ -2263,7 +2414,8 @@ section,
   border-color: color-mix(in srgb, var(--accent-color), transparent 55%);
   background: color-mix(in srgb, var(--accent-color), transparent 94%);
   transform: translateY(-5px);
-  box-shadow: 0 12px 36px color-mix(in srgb, var(--accent-color), transparent 85%);
+  box-shadow: 0 12px 36px
+    color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
 .market-reality .stat-card:hover::before {
@@ -2346,13 +2498,15 @@ section,
   font-size: 1rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 72%);
+  box-shadow: 0 8px 25px
+    color-mix(in srgb, var(--accent-color), transparent 72%);
 }
 
 .market-reality .reality-cta .btn-glow:hover {
   background: color-mix(in srgb, var(--accent-color), black 10%);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px color-mix(in srgb, var(--accent-color), transparent 65%);
+  box-shadow: 0 12px 32px
+    color-mix(in srgb, var(--accent-color), transparent 65%);
   color: var(--contrast-color);
 }
 
@@ -2362,8 +2516,10 @@ section,
 .trust-bar {
   background: color-mix(in srgb, var(--surface-color), var(--accent-color) 2%);
   padding: 28px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 88%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 88%);
 }
 
 .trust-bar .trust-inner {
@@ -2388,7 +2544,8 @@ section,
   align-items: center;
   gap: 10px;
   padding: 8px 28px;
-  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 86%);
+  border-right: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 86%);
 }
 
 .trust-bar .trust-item:last-child {
@@ -2429,7 +2586,11 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), white 20%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), white 20%)
+  );
   color: var(--contrast-color);
   border-radius: 20px;
   padding: 5px 14px;
@@ -2456,7 +2617,8 @@ section,
 
   .trust-bar .trust-item {
     border-right: none;
-    border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 86%);
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--default-color), transparent 86%);
     padding: 12px 0;
     width: 100%;
     justify-content: center;
@@ -2479,9 +2641,11 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(135deg,
-      color-mix(in srgb, var(--accent-color), transparent 90%),
-      color-mix(in srgb, var(--accent-color), white 92%));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-color), transparent 90%),
+    color-mix(in srgb, var(--accent-color), white 92%)
+  );
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
   color: var(--accent-color);
   font-size: 0.72rem;
@@ -2591,13 +2755,15 @@ section,
   border-radius: 16px;
   padding: 28px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--default-color), transparent 94%);
+  box-shadow: 0 4px 20px
+    color-mix(in srgb, var(--default-color), transparent 94%);
   flex: 1;
 }
 
 .engagement-journey .phase-content:hover {
   border-color: color-mix(in srgb, var(--accent-color), transparent 65%);
-  box-shadow: 0 10px 36px color-mix(in srgb, var(--accent-color), transparent 88%);
+  box-shadow: 0 10px 36px
+    color-mix(in srgb, var(--accent-color), transparent 88%);
   transform: translateY(-3px);
 }
 
@@ -2650,14 +2816,15 @@ section,
   }
 }
 
-
 /*--------------------------------------------------------------
 # Cloud Efficiency Scorecard (Multi-step form)
 --------------------------------------------------------------*/
 .scorecard-section {
-  background: linear-gradient(135deg,
-      color-mix(in srgb, var(--background-color), var(--accent-color) 6%) 0%,
-      color-mix(in srgb, var(--surface-color), var(--accent-color) 10%) 100%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--background-color), var(--accent-color) 6%) 0%,
+    color-mix(in srgb, var(--surface-color), var(--accent-color) 10%) 100%
+  );
 }
 
 .scorecard-section .scorecard-left {
@@ -2712,7 +2879,8 @@ section,
 .scorecard-card {
   background: var(--surface-color);
   border-radius: 20px;
-  box-shadow: 0 20px 60px color-mix(in srgb, var(--accent-color), transparent 90%);
+  box-shadow: 0 20px 60px
+    color-mix(in srgb, var(--accent-color), transparent 90%);
   padding: 40px;
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 90%);
 }
@@ -2753,7 +2921,11 @@ section,
 .scorecard-progress .progress-fill {
   width: 25%;
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), white 20%));
+  background: linear-gradient(
+    90deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), white 20%)
+  );
   border-radius: 10px;
   transition: width 0.4s ease;
 }
@@ -2916,13 +3088,15 @@ section,
   justify-content: center;
   gap: 8px;
   font-family: var(--default-font);
-  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 4px 15px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .sc-btn-next:hover {
   background: color-mix(in srgb, var(--accent-color), black 10%);
   transform: translateY(-1px);
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 60%);
+  box-shadow: 0 8px 25px
+    color-mix(in srgb, var(--accent-color), transparent 60%);
 }
 
 .sc-btn-next i {
@@ -3073,4 +3247,535 @@ section,
 
 .cookie-banner .cookie-btn-accept:hover {
   background: #1d4ed8;
+}
+/*--------------------------------------------------------------
+# Methodology Interactive Section
+--------------------------------------------------------------*/
+.methodology-interactive {
+  position: relative;
+  z-index: 1;
+}
+
+.methodology-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-right: 2px solid var(--border2);
+  padding-right: 15px;
+}
+
+.methodology-btn {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 10px 16px;
+  font-family: var(--heading-font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--default-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.methodology-btn:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 95%);
+  color: var(--heading-color);
+  transform: translateX(5px);
+}
+
+.methodology-btn.active {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 4px 15px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.methodology-content-wrapper {
+  position: relative;
+  min-height: 300px;
+  background: var(--surface-color);
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.methodology-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.methodology-content.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  visibility: visible;
+  position: relative; /* Allows height to adjust based on active content */
+}
+
+.methodology-content .service-icon {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  /* Removed width, height, background, and border-radius to eliminate the box/border */
+}
+
+.methodology-content .service-icon i {
+  font-size: 80px; /* Big floating icon */
+  color: color-mix(
+    in srgb,
+    var(--accent-color),
+    transparent 20%
+  ); /* Slightly faded to not overpower text */
+  line-height: 1;
+}
+
+.tracking-eye {
+  display: inline-block !important;
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+}
+
+/* Triggers animation when hovering the container card */
+.methodology-content:hover .tracking-eye {
+  animation: irisFocus 0.8s ease-in-out forwards;
+}
+
+@keyframes irisFocus {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(0.85) rotate(-20deg);
+  }
+  70% {
+    transform: scale(1.15) rotate(15deg);
+  }
+  100% {
+    transform: scale(1.05) rotate(0deg);
+  }
+}
+
+.methodology-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+}
+
+.methodology-content .lead-text {
+  font-size: 1rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.methodology-content .content-details {
+  border-top: 1px solid var(--border2);
+  padding-top: 15px;
+}
+
+.methodology-content .tech-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.methodology-content .tech-bullets li {
+  padding-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--default-color);
+}
+
+.methodology-content .tech-bullets li i {
+  color: #10b981;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 991px) {
+  .methodology-menu {
+    border-right: none;
+    border-bottom: 2px solid var(--border2);
+    padding-right: 0;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .methodology-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    flex: 1 1 calc(50% - 10px);
+    text-align: center;
+  }
+  .methodology-btn:hover {
+    transform: translateY(-2px);
+  }
+  .methodology-content {
+    padding: 25px;
+  }
+}
+
+/*--------------------------------------------------------------
+# AI FinOps Master-Detail Accordion
+--------------------------------------------------------------*/
+.ai-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ai-accordion-list {
+  position: relative;
+}
+
+.ai-active-indicator {
+  position: absolute;
+  left: 0;
+  width: 4px;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  transition:
+    top 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    height 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 1;
+}
+
+.ai-accordion-item {
+  padding-left: 19px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ai-accordion-item:hover .ai-accordion-header {
+  color: var(--accent-color);
+}
+
+.ai-accordion-header {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin: 0;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.ai-accordion-item.active .ai-accordion-header {
+  color: var(--accent-color);
+}
+
+/* Hide description text initially */
+.ai-accordion-desc {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-out;
+}
+
+.ai-accordion-desc-inner {
+  overflow: hidden;
+}
+
+.ai-accordion-item.active .ai-accordion-desc {
+  grid-template-rows: 1fr;
+}
+
+/* Right Column Visuals Stack */
+.ai-visuals-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+}
+
+.ai-visual-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.ai-visual-item.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .ai-accordion-container {
+    flex-direction: column-reverse;
+  }
+  .ai-visuals-wrapper {
+    margin-bottom: 30px;
+  }
+}
+
+/* ── AI Visual Card ── */
+.visual-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── AI Visual Animated Icons ── */
+.anim-pulse {
+  animation: pulseIcon 2s infinite ease-in-out;
+}
+.anim-scan {
+  animation: scanIcon 3s infinite linear;
+}
+.anim-shield {
+  animation: shieldPulse 2.5s infinite ease-in-out;
+}
+.anim-float {
+  animation: floatIcon 3s infinite ease-in-out;
+}
+.anim-spin-slow {
+  animation: spinSlow 6s infinite linear;
+}
+.anim-blink {
+  animation: blinkIcon 2s infinite;
+}
+
+@keyframes pulseIcon {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+    text-shadow: 0 0 15px var(--accent-color);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+@keyframes scanIcon {
+  0% {
+    transform: translateX(-5px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(5px);
+    opacity: 1;
+    text-shadow: 0 0 10px var(--accent-color);
+  }
+  100% {
+    transform: translateX(-5px);
+    opacity: 0.8;
+  }
+}
+@keyframes shieldPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 12px var(--accent-color);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+    text-shadow: 0 10px 15px
+      color-mix(in srgb, var(--accent-color), transparent 50%);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes blinkIcon {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+    text-shadow: 0 0 20px var(--accent-color);
+  }
+}
+
+/* ── Liquid Glass Drag Slider (Stats) ── */
+.stats-scroller {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  padding-bottom: 20px;
+}
+.stats-scroller::-webkit-scrollbar {
+  display: none;
+}
+.stats-scroller .stat-item {
+  flex: 0 0 auto;
+  width: 260px;
+  padding: 20px;
+  border-radius: 16px;
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid transparent;
+}
+.stats-scroller .stat-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateY(8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+.stats-scroller:active {
+  cursor: grabbing;
+}
+.stats-scroller:active .stat-item {
+  cursor: grabbing;
+}
+
+/* ── Stats Utility Classes ── */
+.stat-highlight {
+  color: var(--accent-color);
+  font-weight: 800;
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+.stat-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+.stat-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+.smooth-glitch-num {
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  font-weight: 800;
+  color: var(--accent-color);
+  margin-right: 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.stat-card-glass:hover .smooth-glitch-num {
+  transform: scale(1.05) translateX(3px);
+  text-shadow:
+    -2px 0 10px rgba(0, 120, 215, 0.4),
+    2px 0 10px rgba(0, 255, 255, 0.3);
+  color: color-mix(in srgb, var(--accent-color), white 20%);
+}
+.stat-subtitle {
+  font-size: 0.85rem;
+  color: var(--default-color);
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.stat-source {
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── Expanding FinOps Scope Cards (Premium Glass) ── */
+.stat-card-glass {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.stat-card-glass:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ── Gemini AI Signature Badge Effect ── */
+.badge-gemini {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(220, 53, 69, 0.8),
+    rgba(255, 107, 107, 0.9)
+  ) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 0 10px rgba(220, 53, 69, 0.4),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.badge-gemini::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: badgeShine 3s infinite;
+}
+@keyframes badgeShine {
+  0% {
+    left: -100%;
+  }
+  20% {
+    left: 200%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+.badge-gemini:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 20px rgba(220, 53, 69, 0.8),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
 }
