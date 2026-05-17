@@ -3337,6 +3337,14 @@ section,
   }
 }
 
+/* ── AI Visual Card ── */
+.visual-card {
+  background: color-mix(in srgb, var(--surface-color), transparent 50%) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* ── AI Visual Animated Icons ── */
 .anim-pulse { animation: pulseIcon 2s infinite ease-in-out; }
 .anim-scan { animation: scanIcon 3s infinite linear; }
