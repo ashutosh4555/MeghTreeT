@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghtree — Cloud & AI Cost Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080B10;--bg2:#0D1117;--bg3:#111820;
+  --surface:#141C26;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --accent:#00E5A0;--accent2:#0096FF;--accent3:#FF6B35;
+  --text:#F0F4F8;--muted:#8A9BB0;--dim:#4A5A6E;
+  --syne:'Syne',sans-serif;--dm:'DM Sans',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--dm);font-size:16px;line-height:1.7;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5vw;background:rgba(8,11,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.logo{font-family:var(--syne);font-size:1.4rem;font-weight:800;letter-spacing:-0.04em;color:var(--text);}
+.logo span{color:var(--accent);}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.875rem;transition:color 0.2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{background:var(--accent)!important;color:#080B10!important;padding:0.5rem 1.25rem;border-radius:6px;font-weight:600!important;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:9rem 5vw 5rem;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,160,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,160,0.035) 1px,transparent 1px);background-size:55px 55px;mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,black 20%,transparent 80%);}
+.hero-glow{position:absolute;top:5%;left:50%;transform:translateX(-50%);width:1000px;height:600px;background:radial-gradient(ellipse at 40% 50%,rgba(0,229,160,0.06) 0%,transparent 55%),radial-gradient(ellipse at 65% 50%,rgba(0,150,255,0.06) 0%,transparent 55%);pointer-events:none;}
+.hero-inner{position:relative;z-index:2;max-width:840px;}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,229,160,0.07);border:1px solid rgba(0,229,160,0.22);border-radius:100px;padding:0.35rem 1rem;font-size:0.75rem;font-weight:600;color:var(--accent);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:1.75rem;}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);}
+h1{font-family:var(--syne);font-size:clamp(2.5rem,5.5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-0.045em;color:var(--text);margin-bottom:1.5rem;}
+h1 .green{color:var(--accent);}
+h1 .muted-h{color:var(--muted);font-weight:400;}
+.hero-sub{font-size:1.1rem;color:var(--muted);max-width:580px;line-height:1.8;margin-bottom:2.75rem;font-weight:300;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:#080B10;padding:0.9rem 2.1rem;border-radius:8px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.2s;display:inline-block;}
+.btn-primary:hover{background:#00ffb3;transform:translateY(-1px);}
+.btn-ghost{border:1px solid var(--border2);color:var(--text);padding:0.9rem 2.1rem;border-radius:8px;font-weight:500;font-size:0.95rem;text-decoration:none;transition:all 0.2s;display:inline-block;}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+/* TICKER */
+.ticker-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0.8rem 0;background:var(--bg2);white-space:nowrap;}
+.ticker-inner{display:inline-flex;gap:3rem;animation:ticker 38s linear infinite;}
+.ticker-item{font-size:0.75rem;color:var(--dim);letter-spacing:0.07em;text-transform:uppercase;font-weight:500;}
+.ticker-item span{color:var(--accent);margin-right:0.5rem;}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* STATS BAR */
+.stats-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:3rem 5vw;}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:2rem;max-width:1200px;margin:0 auto;}
+.stat-item{text-align:center;}
+.stat-num{font-family:var(--syne);font-size:2.4rem;font-weight:800;color:var(--accent);letter-spacing:-0.05em;line-height:1;margin-bottom:0.4rem;}
+.stat-label{font-size:0.77rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;line-height:1.45;}
+.stat-source{font-size:0.62rem;color:var(--dim);margin-top:0.3rem;font-style:italic;}
+
+/* SECTIONS */
+section{padding:6rem 5vw;}
+.inner{max-width:1200px;margin:0 auto;}
+.section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;}
+h2{font-family:var(--syne);font-size:clamp(1.85rem,3.2vw,2.6rem);font-weight:700;letter-spacing:-0.04em;line-height:1.15;color:var(--text);margin-bottom:1rem;}
+.section-sub{color:var(--muted);font-size:1rem;max-width:560px;margin-bottom:3.5rem;font-weight:300;line-height:1.75;}
+
+/* INSIGHT CARDS — problem section */
+.problem-section{background:var(--bg2);}
+.insight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;max-width:1150px;margin:0 auto;}
+.insight-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.75rem;position:relative;overflow:hidden;transition:border-color 0.25s,transform 0.25s;}
+.insight-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.insight-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.ic-red::before{background:#E24B4A;}
+.ic-amber::before{background:#F59E0B;}
+.ic-blue::before{background:var(--accent2);}
+.ic-green::before{background:var(--accent);}
+.ic-purple::before{background:#A78BFA;}
+.insight-pct{font-family:var(--syne);font-size:3rem;font-weight:800;letter-spacing:-0.05em;line-height:1;margin-bottom:0.6rem;}
+.ic-red .insight-pct{color:#E24B4A;}
+.ic-amber .insight-pct{color:#F59E0B;}
+.ic-blue .insight-pct{color:var(--accent2);}
+.ic-green .insight-pct{color:var(--accent);}
+.ic-purple .insight-pct{color:#A78BFA;}
+.insight-card p{font-size:0.875rem;color:var(--muted);line-height:1.65;}
+.insight-source{font-size:0.64rem;color:var(--dim);margin-top:0.75rem;font-style:italic;}
+
+/* AI STAT STRIP */
+.ai-strip{background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2rem 5vw;margin:0;}
+.ai-strip-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+.ai-strip-item{display:flex;flex-direction:column;gap:0.3rem;}
+.ai-strip-num{font-family:var(--syne);font-size:1.9rem;font-weight:800;color:var(--accent3);letter-spacing:-0.04em;line-height:1;}
+.ai-strip-label{font-size:0.78rem;color:var(--muted);line-height:1.4;}
+.ai-strip-src{font-size:0.62rem;color:var(--dim);font-style:italic;}
+
+/* FRAMEWORK */
+.framework-section{background:var(--bg);}
+.layers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.2rem;max-width:1200px;margin:0 auto;}
+.layer-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;position:relative;overflow:hidden;transition:border-color 0.25s,transform 0.25s;}
+.layer-card:hover{border-color:var(--border2);transform:translateY(-3px);}
+.layer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.lc0::before{background:#8B7CF6;}.lc1::before{background:var(--accent2);}.lc2::before{background:#F59E0B;}
+.lc3::before{background:var(--accent);}.lc4::before{background:var(--accent);}.lc5::before{background:var(--accent3);}
+.lc6::before{background:#EC4899;}.lc7::before{background:#A78BFA;}
+.lcobs::before{background:linear-gradient(90deg,var(--accent2),var(--accent),var(--accent3));}
+.layer-num{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-bottom:0.5rem;}
+.layer-title{font-family:var(--syne);font-size:1rem;font-weight:700;color:var(--text);letter-spacing:-0.025em;margin-bottom:0.5rem;}
+.layer-purpose{font-size:0.84rem;color:var(--muted);line-height:1.65;margin-bottom:1rem;}
+.tag-list{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.tag{background:var(--bg3);border:1px solid var(--border);border-radius:4px;font-size:0.7rem;color:var(--muted);padding:0.18rem 0.5rem;}
+
+/* AI FINOPS */
+.ai-section{background:var(--bg2);}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:1100px;margin:0 auto;}
+@media(max-width:768px){.ai-grid{grid-template-columns:1fr;}}
+.ai-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:border-color 0.2s;}
+.ai-card:hover{border-color:var(--border2);}
+.ai-card.featured{border-color:rgba(0,229,160,0.2);}
+.ai-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1.2rem;}
+.ai-icon.g{background:rgba(0,229,160,0.1);}.ai-icon.b{background:rgba(0,150,255,0.1);}
+.ai-icon.o{background:rgba(255,107,53,0.1);}.ai-icon.p{background:rgba(167,139,250,0.1);}
+.ai-card h3{font-family:var(--syne);font-size:1.1rem;font-weight:700;letter-spacing:-0.03em;margin-bottom:0.7rem;color:var(--text);}
+.ai-card p{font-size:0.875rem;color:var(--muted);line-height:1.7;}
+.ai-list{list-style:none;margin-top:1rem;}
+.ai-list li{font-size:0.85rem;color:var(--muted);padding:0.28rem 0 0.28rem 1rem;position:relative;}
+.ai-list li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:0.72rem;top:0.38rem;}
+
+/* MATURITY */
+.maturity-section{background:var(--bg);}
+.maturity-track{max-width:900px;margin:0 auto;position:relative;}
+.maturity-track::before{content:'';position:absolute;left:27px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,#0096FF,#00E5A0,#FF6B35);opacity:0.25;}
+.maturity-step{display:flex;gap:1.5rem;margin-bottom:2.5rem;}
+.maturity-dot{width:54px;height:54px;flex-shrink:0;border-radius:50%;background:var(--surface);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:var(--syne);font-weight:800;font-size:0.85rem;position:relative;z-index:2;}
+.maturity-dot.active{background:var(--accent);border-color:var(--accent);color:#080B10;}
+.maturity-content{padding-top:0.7rem;flex:1;}
+.maturity-content h4{font-family:var(--syne);font-size:1.05rem;font-weight:700;color:var(--text);letter-spacing:-0.02em;margin-bottom:0.4rem;}
+.maturity-content p{font-size:0.875rem;color:var(--muted);line-height:1.65;max-width:620px;}
+
+/* SCOPE EXPANSION */
+.scope-section{background:var(--bg2);}
+.scope-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;max-width:1100px;margin:0 auto;}
+.scope-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color 0.2s;}
+.scope-card:hover{border-color:var(--border2);}
+.scope-pct{font-family:var(--syne);font-size:2rem;font-weight:800;color:var(--accent2);letter-spacing:-0.04em;line-height:1;margin-bottom:0.2rem;}
+.scope-change{font-size:0.72rem;font-weight:600;color:var(--accent);letter-spacing:0.05em;margin-bottom:0.5rem;}
+.scope-card h4{font-family:var(--syne);font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:0.3rem;}
+.scope-card p{font-size:0.78rem;color:var(--muted);line-height:1.55;}
+
+/* CLOUDS */
+.clouds-section{background:var(--bg);}
+.cloud-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:980px;margin:0 auto 4rem;}
+@media(max-width:700px){.cloud-cards{grid-template-columns:1fr;}}
+.cloud-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.75rem;text-align:center;transition:border-color 0.2s,transform 0.2s;}
+.cloud-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.cloud-icon{font-family:var(--syne);font-size:0.88rem;font-weight:800;margin-bottom:0.75rem;padding:0.45rem 1rem;border-radius:8px;display:inline-block;letter-spacing:0.02em;}
+.cloud-icon.c1{background:rgba(0,229,160,0.08);color:var(--accent);}
+.cloud-icon.c2{background:rgba(0,150,255,0.08);color:var(--accent2);}
+.cloud-icon.c3{background:rgba(255,107,53,0.08);color:var(--accent3);}
+.cloud-card p{font-size:0.83rem;color:var(--muted);line-height:1.65;}
+
+/* OBS */
+.divider{width:50px;height:2px;background:var(--accent);margin-bottom:2rem;border-radius:2px;}
+.obs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;max-width:1000px;margin:0 auto;}
+.obs-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem;transition:border-color 0.2s;}
+.obs-card:hover{border-color:var(--border2);}
+.obs-pill{display:inline-block;font-size:0.67rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;padding:0.18rem 0.55rem;border-radius:4px;margin-bottom:0.75rem;}
+.op-m{background:rgba(0,150,255,0.1);color:#60B4FF;}
+.op-l{background:rgba(255,107,53,0.1);color:#FF9060;}
+.op-t{background:rgba(0,229,160,0.1);color:var(--accent);}
+.op-c{background:rgba(245,158,11,0.1);color:#F59E0B;}
+.op-a{background:rgba(236,72,153,0.1);color:#EC4899;}
+.obs-card h4{font-family:var(--syne);font-size:0.92rem;font-weight:700;color:var(--text);margin-bottom:0.4rem;letter-spacing:-0.02em;}
+.obs-card p{font-size:0.79rem;color:var(--muted);line-height:1.6;}
+
+/* QUOTE BLOCK */
+.quote-block{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3rem 5vw;}
+.quote-inner{max-width:800px;margin:0 auto;text-align:center;}
+.quote-inner blockquote{font-family:var(--syne);font-size:clamp(1.1rem,2vw,1.45rem);font-weight:600;color:var(--text);letter-spacing:-0.02em;line-height:1.5;margin-bottom:1rem;}
+.quote-inner blockquote::before{content:'"';color:var(--accent);font-size:2rem;line-height:0;vertical-align:-0.4em;margin-right:0.2rem;}
+.quote-inner blockquote::after{content:'"';color:var(--accent);font-size:2rem;line-height:0;vertical-align:-0.4em;margin-left:0.2rem;}
+.quote-attr{font-size:0.78rem;color:var(--dim);}
+
+/* CTA */
+.cta-section{background:var(--bg);text-align:center;padding:7rem 5vw;position:relative;overflow:hidden;}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:300px;background:radial-gradient(ellipse,rgba(0,229,160,0.06) 0%,transparent 65%);pointer-events:none;}
+.cta-section h2{margin-bottom:1rem;}
+.cta-section p{color:var(--muted);max-width:500px;margin:0 auto 2.5rem;font-size:1rem;font-weight:300;}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.25rem 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-family:var(--syne);font-size:1.1rem;font-weight:800;letter-spacing:-0.03em;}
+.footer-logo span{color:var(--accent);}
+footer p{font-size:0.8rem;color:var(--dim);}
+.footer-links{display:flex;gap:1.5rem;list-style:none;}
+.footer-links a{font-size:0.8rem;color:var(--dim);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--muted);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.hero-badge{animation:fadeUp 0.6s 0.0s both;}
+h1{animation:fadeUp 0.6s 0.1s both;}
+.hero-sub{animation:fadeUp 0.6s 0.2s both;}
+.hero-actions{animation:fadeUp 0.6s 0.3s both;}
+@media(max-width:640px){.nav-links{display:none;}.hero{padding:8rem 5vw 4rem;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Megh<span>tree</span></div>
+  <ul class="nav-links">
+    <li><a href="#problem">The Problem</a></li>
+    <li><a href="#framework">Framework</a></li>
+    <li><a href="#ai">AI FinOps</a></li>
+    <li><a href="#scope">Scope</a></li>
+    <li><a href="#clouds">Coverage</a></li>
+    <li><a href="#contact" class="nav-cta">Free Cost Audit</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Cloud &amp; AI Cost Intelligence</div>
+    <h1>
+      Your Cloud Bill<br>
+      <span class="green">Is Your Biggest</span><br>
+      <span class="muted-h">Untapped Advantage.</span>
+    </h1>
+    <p class="hero-sub">
+      Meghtree is the first company engineers and CXOs should call when cloud and AI costs become a problem — or before they do. We turn spend into strategy, across every public cloud and every technology category.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get Your Free Cost Audit →</a>
+      <a href="#framework" class="btn-ghost">See Our Framework</a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <div class="ticker-item"><span>✦</span> Kubernetes Cost Optimization</div>
+    <div class="ticker-item"><span>✦</span> AI Inference Cost Governance</div>
+    <div class="ticker-item"><span>✦</span> Spot &amp; Commitment Management</div>
+    <div class="ticker-item"><span>✦</span> Container-Level Cost Attribution</div>
+    <div class="ticker-item"><span>✦</span> Multi-Cloud FinOps</div>
+    <div class="ticker-item"><span>✦</span> Autonomous Cluster Optimization</div>
+    <div class="ticker-item"><span>✦</span> Real-Time Anomaly Detection</div>
+    <div class="ticker-item"><span>✦</span> LLM Token Cost Governance</div>
+    <div class="ticker-item"><span>✦</span> SaaS &amp; Licensing Optimization</div>
+    <div class="ticker-item"><span>✦</span> Cost-Aware Architecture Design</div>
+    <div class="ticker-item"><span>✦</span> Kubernetes Cost Optimization</div>
+    <div class="ticker-item"><span>✦</span> AI Inference Cost Governance</div>
+    <div class="ticker-item"><span>✦</span> Spot &amp; Commitment Management</div>
+    <div class="ticker-item"><span>✦</span> Container-Level Cost Attribution</div>
+    <div class="ticker-item"><span>✦</span> Multi-Cloud FinOps</div>
+    <div class="ticker-item"><span>✦</span> Autonomous Cluster Optimization</div>
+    <div class="ticker-item"><span>✦</span> Real-Time Anomaly Detection</div>
+    <div class="ticker-item"><span>✦</span> LLM Token Cost Governance</div>
+    <div class="ticker-item"><span>✦</span> SaaS &amp; Licensing Optimization</div>
+    <div class="ticker-item"><span>✦</span> Cost-Aware Architecture Design</div>
+  </div>
+</div>
+
+<!-- STATS BAR — real numbers, sourced -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">of FinOps teams now manage AI spend — up from 31% just two years ago</div>
+      <div class="stat-source">FinOps Foundation — State of FinOps 2026</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">$83B+</div>
+      <div class="stat-label">in annual cloud spend represented by 1,192 survey respondents</div>
+      <div class="stat-source">FinOps Foundation — State of FinOps 2026</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">78%</div>
+      <div class="stat-label">of FinOps practices now report directly to the CTO or CIO</div>
+      <div class="stat-source">FinOps Foundation — State of FinOps 2026</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">66%</div>
+      <div class="stat-label">of cloud infrastructure spend estimated wasted on underutilized resources</div>
+      <div class="stat-source">Harness FinOps in Focus 2025</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">86%</div>
+      <div class="stat-label">of developers take over a week to detect idle or orphaned resources</div>
+      <div class="stat-source">Harness FinOps in Focus 2025</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">90%</div>
+      <div class="stat-label">of FinOps teams now manage or plan to manage SaaS spend — up 25% YoY</div>
+      <div class="stat-source">FinOps Foundation — State of FinOps 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem-section" id="problem">
+  <div class="inner">
+    <div class="section-label">The Problem We Solve</div>
+    <h2>The Data Is Clear.<br>Cloud Waste Is a Leadership Problem.</h2>
+    <p class="section-sub">From 1,192 FinOps practitioners representing $83B+ in annual cloud spend, the picture is unambiguous — cost visibility, governance, and automation are critically behind where they need to be.</p>
+    <div class="insight-grid">
+
+      <div class="insight-card ic-red">
+        <div class="insight-pct">55%</div>
+        <p>of developers ignore cost management entirely — and only 35% cite cloud cost efficiency as a key measure of their success.</p>
+        <div class="insight-source">Harness FinOps in Focus 2025 · 700 developers &amp; engineering leaders surveyed</div>
+      </div>
+
+      <div class="insight-card ic-amber">
+        <div class="insight-pct">68%</div>
+        <p>of development teams do not have fully automated cost-saving practices — leaving optimization dependent on slow, manual human review cycles.</p>
+        <div class="insight-source">Harness FinOps in Focus 2025</div>
+      </div>
+
+      <div class="insight-card ic-red">
+        <div class="insight-pct">52%</div>
+        <p>of engineering leaders say organizations focus on cloud cost optimization only after deployment — not during design, where changes are cheapest to make.</p>
+        <div class="insight-source">Harness FinOps in Focus 2025</div>
+      </div>
+
+      <div class="insight-card ic-purple">
+        <div class="insight-pct">2–4×</div>
+        <p>more influence over technology selection is shown by FinOps practitioners with VP/C-suite engagement versus those limited to Director-level only.</p>
+        <div class="insight-source">FinOps Foundation — State of FinOps 2026</div>
+      </div>
+
+      <div class="insight-card ic-blue">
+        <div class="insight-pct">81%</div>
+        <p>of FinOps teams operate with a centralized enablement or hub-and-spoke model — yet most still struggle to scale optimization across federated engineering teams.</p>
+        <div class="insight-source">FinOps Foundation — State of FinOps 2026</div>
+      </div>
+
+      <div class="insight-card ic-green">
+        <div class="insight-pct">62%</div>
+        <p>of developers actively want more control over and responsibility for cloud costs — the desire is there, but the tooling, culture, and incentives are not.</p>
+        <div class="insight-source">Harness FinOps in Focus 2025</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-block">
+  <div class="quote-inner">
+    <blockquote>Dashboards are table stakes of yesterday — reactive. You have to move to proactive, real-time, automation.</blockquote>
+    <div class="quote-attr">Advanced FinOps Practitioner — State of FinOps 2026, FinOps Foundation</div>
+  </div>
+</div>
+
+<!-- AI STRIP — AI-specific FinOps stats -->
+<div class="ai-strip">
+  <div class="ai-strip-inner">
+    <div class="ai-strip-item">
+      <div class="ai-strip-num">98%</div>
+      <div class="ai-strip-label">of FinOps teams now manage AI spend (up from 31% in 2024)</div>
+      <div class="ai-strip-src">State of FinOps 2026</div>
+    </div>
+    <div class="ai-strip-item">
+      <div class="ai-strip-num">#1</div>
+      <div class="ai-strip-label">AI cost management is the single most desired new skillset across all org sizes</div>
+      <div class="ai-strip-src">State of FinOps 2026</div>
+    </div>
+    <div class="ai-strip-item">
+      <div class="ai-strip-num">86%</div>
+      <div class="ai-strip-label">of developers believe AI can materially impact their ability to optimize costs in 2025</div>
+      <div class="ai-strip-src">Harness FinOps in Focus 2025</div>
+    </div>
+    <div class="ai-strip-item">
+      <div class="ai-strip-num">Top 3</div>
+      <div class="ai-strip-label">most requested tool capability: granular AI spend monitoring — tokens, LLM requests, GPU utilization</div>
+      <div class="ai-strip-src">State of FinOps 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- FRAMEWORK -->
+<section class="framework-section" id="framework">
+  <div class="inner">
+    <div class="section-label">Our Methodology</div>
+    <h2>A Layered FinOps &amp;<br>Optimization Framework</h2>
+    <p class="section-sub">From funding enablement to architectural redesign — every layer of cloud and AI spend is engineered for efficiency. Visibility first. Automation always.</p>
+    <div class="layers-grid">
+
+      <div class="layer-card lc0">
+        <div class="layer-num">Layer 0</div>
+        <div class="layer-title">Funding &amp; Cloud Adoption</div>
+        <p class="layer-purpose">Enable migration, modernization, and PoC funding through cloud provider programs. Reduce day-one investment barriers before a single workload moves.</p>
+        <div class="tag-list">
+          <span class="tag">Migration Funding</span><span class="tag">PoC Credits</span><span class="tag">Modernization Programs</span>
+        </div>
+      </div>
+
+      <div class="layer-card lc1">
+        <div class="layer-num">Layer 1</div>
+        <div class="layer-title">Cost Visibility</div>
+        <p class="layer-purpose">Full-spectrum insight into where every dollar goes — by service, team, workload, and time. No billing surprises. No hidden waste. You cannot optimize what you cannot see.</p>
+        <div class="tag-list">
+          <span class="tag">Spend Analytics</span><span class="tag">Anomaly Detection</span><span class="tag">Real-Time Dashboards</span><span class="tag">Tagging Strategy</span>
+        </div>
+      </div>
+
+      <div class="layer-card lc2">
+        <div class="layer-num">Layer 2</div>
+        <div class="layer-title">Governance &amp; Financial Control</div>
+        <p class="layer-purpose">Budget thresholds, tagging frameworks, cost ownership workflows, and accountability structures that make every engineer a FinOps partner — not a bystander.</p>
+        <div class="tag-list">
+          <span class="tag">Budgets &amp; Alerts</span><span class="tag">Tagging Strategy</span><span class="tag">Cost Ownership</span><span class="tag">Governance Workflows</span>
+        </div>
+      </div>
+
+      <div class="layer-card lc3">
+        <div class="layer-num">Layer 3</div>
+        <div class="layer-title">Kubernetes Cost Visibility</div>
+        <p class="layer-purpose">Namespace-level, pod-level, and team-level cost attribution for container workloads. Identify idle resources before they drain budget silently for weeks.</p>
+        <div class="tag-list">
+          <span class="tag">Namespace Allocation</span><span class="tag">Pod-Level Cost</span><span class="tag">Idle Detection</span><span class="tag">Team Cost Tracking</span>
+        </div>
+      </div>
+
+      <div class="layer-card lc4">
+        <div class="layer-num">Layer 4</div>
+        <div class="layer-title">Kubernetes Optimization</div>
+        <p class="layer-purpose">Autonomous container optimization: bin-packing, autoscaling, node rightsizing, and spot orchestration — running continuously without human intervention.</p>
+        <div class="tag-list">
+          <span class="tag">Bin-Packing</span><span class="tag">Autoscaling</span><span class="tag">Node Optimization</span><span class="tag">Spot Orchestration</span><span class="tag">Autonomous Mode</span>
+        </div>
+      </div>
+
+      <div class="layer-card lc5">
+        <div class="layer-num">Layer 5</div>
+        <div class="layer-title">Infrastructure Optimization</div>
+        <p class="layer-purpose">Spot orchestration, predictive autoscaling, and hybrid spot/on-demand strategies for compute workloads — without interruption risk or performance compromise.</p>
+        <div class="tag-list">
+          <span class="tag">Spot Orchestration</span><span class="tag">Predictive Scaling</span><span class="tag">Interruption Handling</span><span class="tag">Hybrid Compute</span>
+        </div>
+      </div>
+
+      <div class="layer-card lc6">
+        <div class="layer-num">Layer 6</div>
+        <div class="layer-title">Commitment &amp; Rightsizing</div>
+        <p class="layer-purpose">Savings plans, reserved capacity, and compute rightsizing. Baseline workload cost reduction with maximum coverage and utilization rates. Where most of the "big rocks" live.</p>
+        <div class="tag-list">
+          <span class="tag">Savings Plans</span><span class="tag">Reserved Capacity</span><span class="tag">Rightsizing</span><span class="tag">Coverage Tracking</span>
+        </div>
+      </div>
+
+      <div class="layer-card lc7">
+        <div class="layer-num">Layer 7</div>
+        <div class="layer-title">Architecture Optimization</div>
+        <p class="layer-purpose">ARM compute migration, intelligent storage tiering, cloud-native patterns. Efficiency baked into how you build — not retrofitted after deployment.</p>
+        <div class="tag-list">
+          <span class="tag">ARM Migration</span><span class="tag">Storage Tiering</span><span class="tag">Cold Archive</span><span class="tag">Cloud-Native Design</span>
+        </div>
+      </div>
+
+      <div class="layer-card lcobs" style="grid-column:1/-1;">
+        <div class="layer-num">Cross-Layer</div>
+        <div class="layer-title">Monitoring &amp; Observability Intelligence</div>
+        <p class="layer-purpose">Metrics, logs, traces, and cost correlation stitched across all layers — from cluster utilization to per-token AI spend. Observability that makes optimization continuous and self-sustaining. The #1 requested capability in the State of FinOps 2026: granular AI spend monitoring across tokens, LLM requests, and GPU utilization.</p>
+        <div class="tag-list">
+          <span class="tag">Metrics Telemetry</span><span class="tag">Log Aggregation</span><span class="tag">Distributed Tracing</span><span class="tag">Cost Correlation</span><span class="tag">Performance-to-Cost Mapping</span><span class="tag">FinOps Dashboards</span><span class="tag">Anomaly Detection</span><span class="tag">Cost-Aware Observability</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AI FINOPS -->
+<section class="ai-section" id="ai">
+  <div class="inner">
+    <div class="section-label">AI FinOps</div>
+    <h2>AI Spend Is the<br>Fastest-Growing Cost Problem</h2>
+    <p class="section-sub">98% of FinOps teams now manage AI spend — up from just 31% two years ago. AI cost management is now the #1 skillset gap across every organization size. Meghtree is built for this moment.</p>
+    <div class="ai-grid">
+
+      <div class="ai-card featured">
+        <div class="ai-icon g">🧠</div>
+        <h3>LLM &amp; Inference Cost Governance</h3>
+        <p>Token-level cost attribution, model benchmarking, and intelligent routing between inference endpoints. The #1 requested FinOps tool feature in 2026 is granular AI spend monitoring — we deliver it.</p>
+        <ul class="ai-list">
+          <li>Per-model, per-team token spend tracking</li>
+          <li>Prompt caching to reduce redundant inference costs</li>
+          <li>Model routing: balance cost vs quality per use case</li>
+          <li>Budget guardrails on AI API consumption</li>
+        </ul>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-icon b">⚡</div>
+        <h3>AI Infrastructure Rightsizing</h3>
+        <p>GPU and accelerator utilization optimization, training job scheduling, and spot strategies for ML workloads. AI infrastructure has new pricing models — we build the playbooks for them.</p>
+        <ul class="ai-list">
+          <li>GPU cluster utilization monitoring</li>
+          <li>Spot orchestration for training jobs</li>
+          <li>Right-instance selection for inference workloads</li>
+          <li>Idle GPU detection and automated shutdown</li>
+        </ul>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-icon o">📊</div>
+        <h3>AI Observability &amp; Cost Correlation</h3>
+        <p>Connect latency, error rates, and throughput directly to per-request cost. Organizations report difficulty gaining visibility into AI costs — we solve that with purpose-built observability pipelines.</p>
+        <ul class="ai-list">
+          <li>Request-level cost tracing for AI APIs</li>
+          <li>Latency-vs-cost trade-off dashboards</li>
+          <li>Anomaly detection on AI spend spikes</li>
+          <li>Unified metrics, logs, and tracing pipelines</li>
+        </ul>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-icon p">🤖</div>
+        <h3>Agentic AI Workflow Cost Management</h3>
+        <p>Agentic pipelines introduce unpredictable, compounding cost loops. We instrument, cap, and govern multi-step AI workflows before they breach budgets — a challenge no off-the-shelf tool handles yet.</p>
+        <ul class="ai-list">
+          <li>Per-run cost ceilings for agent workflows</li>
+          <li>Tool-call cost attribution in agentic pipelines</li>
+          <li>Context window optimization strategies</li>
+          <li>Cost-aware retrieval pipeline design</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MATURITY -->
+<section class="maturity-section">
+  <div class="inner">
+    <div class="section-label">FinOps Maturity</div>
+    <h2>We Take You From<br>Reactive to Autonomous</h2>
+    <p class="section-sub">Every engagement maps to a maturity stage. "Dashboards are table stakes of yesterday — reactive. You have to move to proactive, real-time, automation." We make that real.</p>
+    <div class="maturity-track">
+
+      <div class="maturity-step">
+        <div class="maturity-dot">01</div>
+        <div class="maturity-content">
+          <h4>Visibility — Know What You Spend</h4>
+          <p>Deploy cost visibility tooling, tagging frameworks, and anomaly detection. Get a single source of truth for cloud and AI spend across every team. Allocation, forecasting, and reporting come first — you cannot optimize what you cannot see.</p>
+        </div>
+      </div>
+
+      <div class="maturity-step">
+        <div class="maturity-dot">02</div>
+        <div class="maturity-content">
+          <h4>Analysis — Understand the Why</h4>
+          <p>Attribute waste to specific workloads, services, and teams. Benchmark against data from $83B+ in annual industry spend. Identify the highest-ROI opportunities across your stack before committing engineering time.</p>
+        </div>
+      </div>
+
+      <div class="maturity-step">
+        <div class="maturity-dot">03</div>
+        <div class="maturity-content">
+          <h4>Manual Optimization — Quick Wins First</h4>
+          <p>Rightsizing, commitment purchases, storage tier changes, idle resource cleanup. Measurable savings within 30 days of engagement — before a single automation pipeline is in place.</p>
+        </div>
+      </div>
+
+      <div class="maturity-step">
+        <div class="maturity-dot active">04</div>
+        <div class="maturity-content">
+          <h4>Automated Optimization — Scale the Savings</h4>
+          <p>Plug in autonomous container and infrastructure optimization engines. Savings run continuously without manual intervention across Kubernetes, compute, and commitment layers. This is where compounding begins — and where most organizations stop short.</p>
+        </div>
+      </div>
+
+      <div class="maturity-step">
+        <div class="maturity-dot">05</div>
+        <div class="maturity-content">
+          <h4>Autonomous &amp; Architectural — Efficiency by Design</h4>
+          <p>Cost efficiency baked into architecture from day one: ARM compute, intelligent tiering, cloud-native patterns, and FinOps culture embedded in engineering workflows. Pre-deployment architecture costing — the #2 most requested FinOps tool feature in 2026.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SCOPE EXPANSION -->
+<section class="scope-section" id="scope">
+  <div class="inner">
+    <div class="section-label">Expanding FinOps Scope</div>
+    <h2>FinOps Is No Longer<br>Just About Cloud</h2>
+    <p class="section-sub">The State of FinOps 2026 confirms a major shift: FinOps teams now manage SaaS, licensing, data center, private cloud, and AI — not just public cloud. Meghtree's framework is designed for this multi-technology reality.</p>
+    <div class="scope-grid">
+
+      <div class="scope-card">
+        <div class="scope-pct">98%</div>
+        <div class="scope-change">↑ +35% YoY</div>
+        <h4>AI Spend</h4>
+        <p>Nearly every FinOps team now manages AI. Up from 63% in 2025 and just 31% in 2024. The fastest-growing scope category by far.</p>
+      </div>
+
+      <div class="scope-card">
+        <div class="scope-pct">90%</div>
+        <div class="scope-change">↑ +25% YoY</div>
+        <h4>SaaS</h4>
+        <p>SaaS spend governance is now mainstream. Data platforms and AI tooling are the most actively managed SaaS categories, where billing volatility is highest.</p>
+      </div>
+
+      <div class="scope-card">
+        <div class="scope-pct">64%</div>
+        <div class="scope-change">↑ +15% YoY</div>
+        <h4>Licensing</h4>
+        <p>Software license management is being absorbed into FinOps remit as organizations seek unified visibility across all technology spend categories.</p>
+      </div>
+
+      <div class="scope-card">
+        <div class="scope-pct">57%</div>
+        <div class="scope-change">↑ +18% YoY</div>
+        <h4>Private Cloud</h4>
+        <p>Hybrid and private cloud spend is entering FinOps scope as teams are tasked with governing technology value — not just public cloud bills.</p>
+      </div>
+
+      <div class="scope-card">
+        <div class="scope-pct">48%</div>
+        <div class="scope-change">↑ +12% YoY</div>
+        <h4>Data Center</h4>
+        <p>On-premises and co-lo data center costs are now part of the FinOps mandate at nearly half of organizations — with demand rising rapidly.</p>
+      </div>
+
+      <div class="scope-card">
+        <div class="scope-pct">28%</div>
+        <div class="scope-change">↑ Emerging</div>
+        <h4>Labor Costs</h4>
+        <p>An emerging cohort is beginning to include labor in the technology value conversation — signaling FinOps evolution toward total technology cost management.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLOUD COVERAGE -->
+<section class="clouds-section" id="clouds">
+  <div class="inner">
+    <div class="section-label">Platform Coverage</div>
+    <h2>One Framework.<br>Every Major Public Cloud.</h2>
+    <p class="section-sub">Whether all-in on one provider or running multi-cloud, our framework applies consistently across hyperscalers — with no gaps and no silos.</p>
+    <div class="cloud-cards">
+      <div class="cloud-card">
+        <div class="cloud-icon c1">Hyperscaler — Americas</div>
+        <p>Full coverage across compute, storage, containers, serverless, and managed services. Visibility, governance, rightsizing, savings commitments, and architectural optimization — end to end.</p>
+      </div>
+      <div class="cloud-card">
+        <div class="cloud-icon c2">Hyperscaler — Europe &amp; Enterprise</div>
+        <p>VM rightsizing, container optimization, reservations, hybrid licensing strategy, and governance across large enterprise cloud estates with complex compliance needs.</p>
+      </div>
+      <div class="cloud-card">
+        <div class="cloud-icon c3">Hyperscaler — Asia Pacific</div>
+        <p>Committed use discounts, spot VM orchestration, managed container cost modeling, data service governance, and recommender-driven rightsizing at scale.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-label">Observability Stack</div>
+    <h2 style="margin-bottom:0.5rem;">Cost-Aware Observability</h2>
+    <p class="section-sub">Monitoring that correlates performance to spend. The #1 requested FinOps tool feature: granular monitoring of AI spend across tokens, LLM requests, and GPU utilization.</p>
+    <div class="obs-grid">
+      <div class="obs-card">
+        <span class="obs-pill op-m">Metrics</span>
+        <h4>Real-Time Utilization Signals</h4>
+        <p>Open-standard telemetry pipelines feeding cost correlation dashboards. Compute, memory, and network mapped to per-service spend in real time.</p>
+      </div>
+      <div class="obs-card">
+        <span class="obs-pill op-l">Logs</span>
+        <h4>Structured Cost Log Ingestion</h4>
+        <p>Billing logs, usage events, and cost allocation records centralized into a unified observability layer — queryable, alertable, and fully auditable.</p>
+      </div>
+      <div class="obs-card">
+        <span class="obs-pill op-t">Traces</span>
+        <h4>Distributed Cost Tracing</h4>
+        <p>Trace-level cost attribution across distributed systems. Know which upstream call generated which line of your cloud bill.</p>
+      </div>
+      <div class="obs-card">
+        <span class="obs-pill op-c">Cost Dashboards</span>
+        <h4>FinOps Observability Dashboards</h4>
+        <p>Pre-built dashboards covering spend trends, efficiency ratios, commitment coverage, and waste heat-maps across every environment and team.</p>
+      </div>
+      <div class="obs-card">
+        <span class="obs-pill op-a">Anomaly Alerts</span>
+        <h4>Proactive Spend Anomaly Detection</h4>
+        <p>ML-backed anomaly detection on cost and utilization signals. Alerted before a spike becomes a crisis — not after the invoice arrives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-glow"></div>
+  <div style="position:relative;z-index:2;">
+    <div class="section-label" style="display:block;text-align:center;">Start Today</div>
+    <h2>Your Cloud Bill Is Too High.<br>We Can Prove It — Free.</h2>
+    <p>Get a no-obligation cloud cost audit. We identify waste, quantify savings, and hand you a clear optimization roadmap within 48 hours.</p>
+    <div class="cta-actions">
+      <a href="mailto:hello@meghtree.com" class="btn-primary">Request Free Cost Audit →</a>
+      <a href="#framework" class="btn-ghost">Explore the Framework</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Megh<span>tree</span></div>
+  <p>© 2025 Meghtree. Cloud &amp; AI Cost Intelligence.</p>
+  <ul class="footer-links">
+    <li><a href="#framework">Framework</a></li>
+    <li><a href="#ai">AI FinOps</a></li>
+    <li><a href="#scope">Scope</a></li>
+    <li><a href="#clouds">Coverage</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
