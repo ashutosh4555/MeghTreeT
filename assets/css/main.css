@@ -3721,6 +3721,8 @@ section,
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateZ(0);
+  will-change: transform;
 }
 .stat-card-glass:hover {
   transform: translateY(-8px);
@@ -3750,7 +3752,7 @@ section,
   content: "";
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 50%;
   height: 100%;
   background: linear-gradient(
@@ -3759,18 +3761,18 @@ section,
     rgba(255, 255, 255, 0.8),
     transparent
   );
-  transform: skewX(-20deg);
+  transform: translateX(-200%) skewX(-20deg);
   animation: badgeShine 3s infinite;
 }
 @keyframes badgeShine {
   0% {
-    left: -100%;
+    transform: translateX(-200%) skewX(-20deg);
   }
   20% {
-    left: 200%;
+    transform: translateX(400%) skewX(-20deg);
   }
   100% {
-    left: 200%;
+    transform: translateX(400%) skewX(-20deg);
   }
 }
 .badge-gemini:hover {
