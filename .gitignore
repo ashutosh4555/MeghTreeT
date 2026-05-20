@@ -1,0 +1,19 @@
+# Local development/utility files
+fix_nav.py
+process.py
+text_content.txt
+prompt-qwen.md
+new Content.html
+README.md
+README.md
+
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
