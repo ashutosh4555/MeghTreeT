@@ -1,0 +1,24 @@
+# Meghtree Technologies — Cloud & AI Cost Intelligence
+
+Meghtree Technologies is a Bangalore-based FinOps consultancy specializing in autonomous Azure cloud cost optimization, Kubernetes rightsizing, and AI spend governance. We help enterprises cut cloud bills by 30–60% through a layered FinOps framework.
+
+## Key Pages
+
+- [Home](https://meghtree.co.in/) — Cloud & AI cost intelligence platform. Free 48-hour cost assessment. FinOps framework, AI spend governance, maturity model.
+- [FAQ](https://meghtree.co.in/faq.html) — Frequently asked questions about FinOps, Azure cost optimization, Kubernetes rightsizing, and autonomous cloud savings.
+- [Privacy Policy](https://meghtree.co.in/privacy.html) — Data protection practices compliant with India's DPDP Act 2023.
+- [Terms of Service](https://meghtree.co.in/terms.html) — Terms governing website use and cloud optimization services.
+
+## Core Services
+
+- **Azure Cloud Cost Optimization** — Autonomous FinOps reducing Azure spend by 30–60%
+- **Kubernetes Cost Reduction** — Namespace-level, pod-level cost attribution and rightsizing
+- **AI FinOps & LLM Cost Governance** — Token-level cost tracking, GPU optimization, agentic AI workflow management
+- **Free 48-Hour Cloud Cost Assessment** — Read-only analysis with personalized savings report
+
+## Contact
+
+- Email: sales@meghtree.co.in | info@meghtree.co.in
+- Phone: +91-9980471559
+- Address: Property No.224, 3rd Floor, Ranka Junction 80/3, Vijinapur Village, Old Madras Road, KR Puram Hobli, Bengaluru 560016, Karnataka, India
+- LinkedIn: https://www.linkedin.com/company/meghtree-technologies
