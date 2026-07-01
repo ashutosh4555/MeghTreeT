@@ -293,23 +293,23 @@
       <a href="#main" class="skip-link">Skip to main content</a>
       <div class="top-announcement w-100" style="background: var(--accent-color); color: #fff; text-align: center; padding: 10px; font-weight: 500; font-size: 0.9rem; z-index: 1000; position: relative;">
         Meghtree is proud to announce our Official Partnership with CAST AI for Autonomous Kubernetes Optimization. 
-        <a href="index.html#framework" style="color: #fff; text-decoration: underline; font-weight: 700; margin-left: 10px; margin-right: 20px;">Learn More</a>
+        <a href="/#framework" style="color: #fff; text-decoration: underline; font-weight: 700; margin-left: 10px; margin-right: 20px;">Learn More</a>
         <button onclick="this.parentElement.style.display='none'" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; padding: 0; line-height: 1;" aria-label="Close announcement">&times;</button>
       </div>
       <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between" style="padding-top: 15px; padding-bottom: 15px; width: 100%;">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <img src="assets/img/logo.webp" alt="Meghtree Technologies Logo" />
           <div class="sitename">Meghtree Technologies</div>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#framework">Framework</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#framework">Framework</a></li>
             <li><a href="#footer">Contact Us</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li>
-              <a href="index.html#scorecard" class="btn-nav-cta"
+              <a href="/#scorecard" class="btn-nav-cta"
                 >Get Assessment</a
               >
             </li>
@@ -320,10 +320,15 @@
     </header>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPath = window.location.pathname.split('/').pop() || '';
         document.querySelectorAll('#navmenu a').forEach(link => {
-          const href = link.getAttribute('href');
-          if (href === currentPath || (currentPath === 'index.html' && href.startsWith('index.html#'))) {
+          const href = link.getAttribute('href') || '';
+          
+          if (
+            href === currentPath ||
+            (currentPath === '' && (href === '/' || href.startsWith('/#'))) ||
+            (currentPath === 'index.html' && (href === '/' || href.startsWith('/#')))
+          ) {
             link.classList.add('active');
           } else {
             link.classList.remove('active');
@@ -1770,7 +1775,7 @@
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 footer-about">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="/" class="logo d-flex align-items-center">
               <img
                  src="assets/img/logo.webp"
                  alt="Meghtree Technologies Logo"
@@ -1787,12 +1792,12 @@
           <div class="col-lg-2 col-6 footer-links">
             <h4>Navigate</h4>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html#framework">Framework</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/#framework">Framework</a></li>
               <li><a href="#footer">Contact Us</a></li>
               <li><a href="faq.html">FAQ</a></li>
               <li>
-                <a href="index.html#scorecard" class="btn-nav-cta"
+                <a href="/#scorecard" class="btn-nav-cta"
                   >Get Assessment</a
                 >
               </li>
