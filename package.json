@@ -1,0 +1,7 @@
+{
+  "name": "meghtree-site",
+  "private": true,
+  "scripts": {
+    "build:html": "node scripts/build-html.mjs"
+  }
+}
