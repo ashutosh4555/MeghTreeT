@@ -138,3 +138,38 @@
   window.addEventListener("load", navmenuScrollspy);
   document.addEventListener("scroll", navmenuScrollspy);
 })();
+
+/**
+ * Local File Protocol Interceptor
+ * This allows clean absolute URLs (like href="/faq") to work when
+ * developers double-click files locally (file:///.../index.html)
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.protocol === 'file:') {
+    document.addEventListener('click', function(e) {
+      let link = e.target.closest('a');
+      if (link) {
+        let href = link.getAttribute('href');
+        if (href) {
+          if (href === '/') {
+            e.preventDefault();
+            window.location.href = 'index.html';
+          } else if (href.startsWith('/#')) {
+            e.preventDefault();
+            window.location.href = 'index.html' + href.substring(1);
+          } else if (href.startsWith('/') && !href.includes('.')) {
+            // E.g., /faq -> faq.html
+            e.preventDefault();
+            let page = href.substring(1);
+            let hashIdx = page.indexOf('#');
+            if (hashIdx !== -1) {
+              window.location.href = page.substring(0, hashIdx) + '.html' + page.substring(hashIdx);
+            } else {
+              window.location.href = page + '.html';
+            }
+          }
+        }
+      }
+    });
+  }
+});

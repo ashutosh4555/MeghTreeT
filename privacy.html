@@ -159,7 +159,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/#framework">Framework</a></li>
             <li><a href="#footer">Contact Us</a></li>
-            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="/faq">FAQ</a></li>
             <li>
               <a href="/#scorecard" class="btn-nav-cta"
                 >Get Assessment</a
@@ -172,15 +172,23 @@
     </header>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const currentPath = window.location.pathname.split('/').pop() || '';
+        const path = window.location.pathname;
+        const currentFile = path.split('/').pop() || '';
         document.querySelectorAll('#navmenu a').forEach(link => {
           const href = link.getAttribute('href') || '';
           
-          if (
-            href === currentPath ||
-            (currentPath === '' && (href === '/' || href.startsWith('/#'))) ||
-            (currentPath === 'index.html' && (href === '/' || href.startsWith('/#')))
-          ) {
+          let isActive = false;
+          if (href === path || href === '/' + currentFile || href === currentFile) {
+              isActive = true;
+          }
+          if ((currentFile === '' || currentFile === 'index.html') && (href === '/' || href.startsWith('/#'))) {
+              isActive = true;
+          }
+          if (currentFile.replace('.html', '') !== '' && href === '/' + currentFile.replace('.html', '')) {
+              isActive = true;
+          }
+          
+          if (isActive) {
             link.classList.add('active');
           } else {
             link.classList.remove('active');
@@ -228,7 +236,7 @@
               <div class="mt-5 p-4" style="background: var(--surface-color); border-radius: 12px; border: 1px solid var(--border2);">
                 <h5 style="font-size: 1rem; font-weight: 700;">Looking for Terms?</h5>
                 <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 15px;">Review our terms of service.</p>
-                <a href="terms.html" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">View Terms &rarr;</a>
+                <a href="/terms" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">View Terms &rarr;</a>
               </div>
             </div>
           </div>
@@ -405,7 +413,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/#framework">Framework</a></li>
               <li><a href="#footer">Contact Us</a></li>
-              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="/faq">FAQ</a></li>
               <li>
                 <a href="/#scorecard" class="btn-nav-cta"
                   >Get Assessment</a
@@ -450,8 +458,8 @@
           rights reserved
         </p>
         <div class="footer-legal">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
         </div>
       </div>
     </footer>
@@ -471,7 +479,7 @@
           <p>
             We use essential cookies so the site works. If you accept, we also use
             Google Analytics cookies to understand how visitors use our site. See
-            our <a href="privacy.html">Privacy Policy</a> for details.
+            our <a href="/privacy">Privacy Policy</a> for details.
           </p>
         </div>
         <div class="cookie-actions">
